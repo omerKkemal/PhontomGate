@@ -1,0 +1,78 @@
+name: Build PhantomGate APK
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Get Date
+        id: get-date
+        run: echo "date=$(/bin/date -u '+%Y%m%d')" >> $GITHUB_OUTPUT
+
+      - name: Cache Buildozer Global
+        uses: actions/cache@v4
+        with:
+          path: .buildozer_global
+          key: buildozer-global-${{ hashFiles('buildozer.spec') }}
+
+      - uses: actions/cache@v4
+        with:
+          path: .buildozer
+          key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
+
+      - name: Install Dependencies & Android SDK/NDK
+        run: |
+          sudo apt update
+          sudo apt install -y zip unzip openjdk-17-jdk python3-pip libstdc++6 wget coreutils autoconf automake libtool libtool-bin m4 libltdl-dev ccache
+
+          pip install --upgrade pip
+          pip install buildozer cython
+
+          # ✅ Setup Android SDK
+          export ANDROID_SDK_ROOT=$HOME/android-sdk
+          mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
+          cd /tmp
+          wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O tools.zip
+          unzip tools.zip -d cmdline-tools-temp
+          mkdir -p $ANDROID_SDK_ROOT/cmdline-tools/latest
+          mv cmdline-tools-temp/cmdline-tools/* $ANDROID_SDK_ROOT/cmdline-tools/latest/
+
+          export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+          yes | sdkmanager --licenses
+          sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
+
+          echo "ANDROID_HOME=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
+          echo "PATH=$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH" >> $GITHUB_ENV
+
+          # ✅ Setup Android NDK
+          NDK_VERSION=r25b
+          wget https://dl.google.com/android/repository/android-ndk-$NDK_VERSION-linux.zip -O ndk.zip
+          unzip ndk.zip -d $HOME/android-ndk
+          mv $HOME/android-ndk/android-ndk-$NDK_VERSION $HOME/android-ndk-r$NDK_VERSION
+
+          # ✅ Link SDK & NDK for Buildozer
+          mkdir -p ~/.buildozer/android/platform
+          ln -sfn $ANDROID_SDK_ROOT ~/.buildozer/android/platform/android-sdk
+          ln -sfn $HOME/android-ndk-r$NDK_VERSION ~/.buildozer/android/platform/android-ndk-r$NDK_VERSION
+
+          # ✅ Legacy sdkmanager symlink
+          mkdir -p ~/.buildozer/android/platform/android-sdk/tools/bin
+          ln -sfn $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager ~/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager
+
+      - name: Build APK with Buildozer
+        run: buildozer android debug
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PhantomGate-APK
+          path: bin/*.apk

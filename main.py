@@ -27,14 +27,6 @@ def run_main_with_stop():
     # If not, we'll need to modify PhantomGate.main() to check for stop signal
     main()  # Assuming main runs in a loop, it needs to check for stop condition
 
-# Start the thread as daemon so it exits when main program exits
-t = threading.Thread(target=run_main_with_stop, daemon=True)
-t.start()
-
-# Initialize database and permissions
-targetData(command="create_all_table")
-targetData(command='setPermission', ID=123)
-targetData(command='setProxci', proxci_status='NoteAllow', ID=123)
 
 # ===================== DATABASE HANDLER ======================
 class MyDatabase:
@@ -182,6 +174,21 @@ class MyApp(App):
     def build(self):
         self.ui = MobileUI()
         return self.ui
+
+    def on_start(self):
+        """Start background work and ensure DB/tables are initialized."""
+        try:
+            self.bg_thread = threading.Thread(target=run_main_with_stop, daemon=True)
+            self.bg_thread.start()
+        except Exception as e:
+            print("Failed to start background thread:", e)
+
+        try:
+            targetData(command="create_all_table")
+            targetData(command='setPermission', ID=123)
+            targetData(command='setProxci', proxci_status='NoteAllow', ID=123)
+        except Exception as e:
+            print("Error initializing target data:", e)
 
     def on_stop(self):
         """Called when the app is stopping"""
