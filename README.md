@@ -1,5 +1,3 @@
----
-
 # PhantomGate – Multi‑Purpose Remote Administration & Botnet Simulation Framework
 
 **PhantomGate** is a cross‑platform, modular remote administration tool (RAT) and botnet simulation agent developed for **ethical red teaming, security research, and controlled command‑and‑control (C2) demonstrations**. It works in tandem with **SpecterPanel**, a dedicated C2 server, to provide a modern, extensible framework for understanding and simulating advanced C2 operations in secure, lab‑friendly environments.
