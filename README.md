@@ -1,279 +1,587 @@
-# PhantomGate – Multi‑Purpose Remote Administration & Botnet Simulation Framework
+<!--- Animated Header --->
+<p align="center">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=32&duration=2000&pause=500&color=4F46E5&center=true&vCenter=true&width=600&lines=PhantomGate+Agent;Remote+Administration+Tool;Botnet+Simulation+Framework;Red+Team+Operations;Security+Research" alt="Typing SVG" />
+</p>
+
+<!-- MAIN TITLE -->
+<p align="center">
+  <img src="https://img.shields.io/badge/PHANTOMGATE-MULTI--PURPOSE%20RAT-10b981?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e" alt="PhantomGate">
+</p>
+
+<!-- MODULE BADGES - CLEAN HEADER -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Module-C2%20Communication-4f46e5?style=flat-square&logo=fastapi">
+  <img src="https://img.shields.io/badge/Module-Command%20Execution-10b981?style=flat-square&logo=terminal">
+  <img src="https://img.shields.io/badge/Module-Code%20Injection-f59e0b?style=flat-square&logo=python">
+  <img src="https://img.shields.io/badge/Module-Botnet%20Simulation-ef4444?style=flat-square&logo=bots">
+  <img src="https://img.shields.io/badge/Module-AES%20Encryption-00C853?style=flat-square&logo=lock">
+  <img src="https://img.shields.io/badge/Module-SQLite%20Database-3b82f6?style=flat-square&logo=sqlite">
+  <img src="https://img.shields.io/badge/Module-Kivy%20GUI-8b5cf6?style=flat-square&logo=python">
+</p>
+
+<!-- VERSION BADGES -->
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-10b981?style=for-the-badge&logo=git&logoColor=white&labelColor=1a1a2e">
+  <img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e">
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20Android-3b82f6?style=for-the-badge&logo=windows&logoColor=white&labelColor=1a1a2e">
+  <img src="https://img.shields.io/badge/license-Educational%20Use%20Only-red?style=for-the-badge&logo=legal&logoColor=white&labelColor=1a1a2e">
+</p>
+
+<!-- REPO STATS -->
+<p align="center">
+  <img src="https://api.visitorbadge.io/api/visitors?path=omerKkemal%2Fphantomgate&countColor=%2310b981&style=for-the-badge" alt="Visitors">
+  <img src="https://img.shields.io/github/stars/omerKkemal/phantomgate?style=for-the-badge&logo=github&color=gold&labelColor=1a1a2e" alt="Stars">
+  <img src="https://img.shields.io/github/forks/omerKkemal/phantomgate?style=for-the-badge&logo=github&color=blue&labelColor=1a1a2e" alt="Forks">
+</p>
+
+---
+
+<!-- ASCII ART HEADER -->
+<pre align="center">
+            ╔═══════════════════════════════════════════════════════════════════╗
+            ║  ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗████████╗ ██████╗ ███╗   ███╗  ║
+            ║  ██╔══██╗██║  ██║██╔══██╗████╗  ██║╚══██╔══╝██╔════╝ ████╗ ████║  ║
+            ║  ██████╔╝███████║███████║██╔██╗ ██║   ██║   ██║  ███╗██╔████╔██║  ║
+            ║  ██╔═══╝ ██╔══██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║  ║
+            ║  ██║     ██║  ██║██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║  ║
+            ║  ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝  ║
+            ║                                                                   ║
+            ║     Multi‑Purpose Remote Administration & Botnet Simulation       ║
+            ╚═══════════════════════════════════════════════════════════════════╝
+</pre>
+
+---
+
+## ⚠️ CRITICAL NOTICE
+
+<p align="center">
+  <table>
+    <tr>
+      <td align="center" style="background: #1a1a2e; border-left: 6px solid #ff4d4d; border-radius: 10px; padding: 15px;">
+        <strong>🔴 EDUCATIONAL USE ONLY 🔴</strong><br>
+        This tool is strictly for <strong>authorized security research, red team exercises, and educational purposes</strong>.<br>
+        Unauthorized use is illegal and unethical. Users must comply with all applicable laws.<br>
+        <em>The author assumes NO liability for misuse or damages.</em>
+      </td>
+    </tr>
+  </table>
+</p>
+
+---
+
+## 📋 NAVIGATION MENU
+
+<p align="center">
+  <a href="#-overview"><img src="https://img.shields.io/badge/Overview-10b981?style=for-the-badge&logo=homeassistant&logoColor=white"></a>
+  <a href="#-key-features"><img src="https://img.shields.io/badge/Features-4f46e5?style=for-the-badge&logo=starship&logoColor=white"></a>
+  <a href="#-architecture"><img src="https://img.shields.io/badge/Architecture-f59e0b?style=for-the-badge&logo=structure&logoColor=white"></a>
+  <a href="#-installation"><img src="https://img.shields.io/badge/Installation-ec4899?style=for-the-badge&logo=install&logoColor=white"></a>
+  <a href="#-configuration"><img src="https://img.shields.io/badge/Configuration-8b5cf6?style=for-the-badge&logo=settings&logoColor=white"></a>
+  <a href="#-usage"><img src="https://img.shields.io/badge/Usage-3b82f6?style=for-the-badge&logo=terminal&logoColor=white"></a>
+  <a href="#-api-endpoints"><img src="https://img.shields.io/badge/API-ef4444?style=for-the-badge&logo=fastapi&logoColor=white"></a>
+  <a href="#-safe-mode"><img src="https://img.shields.io/badge/Safe%20Mode-00C853?style=for-the-badge&logo=shield&logoColor=white"></a>
+</p>
+
+---
+
+## 🔭 OVERVIEW
 
 **PhantomGate** is a cross‑platform, modular remote administration tool (RAT) and botnet simulation agent developed for **ethical red teaming, security research, and controlled command‑and‑control (C2) demonstrations**. It works in tandem with **SpecterPanel**, a dedicated C2 server, to provide a modern, extensible framework for understanding and simulating advanced C2 operations in secure, lab‑friendly environments.
 
-> **⚠️ IMPORTANT DISCLAIMER**  
-> This project is intended **solely for educational purposes and authorized research**. Any unauthorized use, deployment, or distribution is strictly prohibited and may be illegal and unethical. The author assumes **no liability** for misuse. **You are responsible for complying with all applicable laws and regulations.**
-
----
-
-## 📚 Table of Contents
-
-- [Key Features](#-key-features)
-- [Operational Workflow](#-operational-workflow)
-- [Architecture & Components](#-architecture--components)
-- [Installation & Setup](#-installation--setup)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
-- [API Endpoints (SpecterPanel)](#-api-endpoints-specterpanel)
-- [Cross‑Platform Compatibility](#-cross‑platform-compatibility)
-- [Safe Mode](#-safe-mode)
-- [Related Project](#-related-project)
-- [Security & Ethics Notice](#-security--ethics-notice)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Author](#-author)
-
----
-
-## ⚙️ Key Features
-
-- **Dynamic C2 Integration**  
-  Connects seamlessly with SpecterPanel or retrieves control parameters from public sources (e.g., Google Drive), enabling flexible agent management.
-
-- **Remote Command Execution**  
-  Executes shell commands on remote hosts and securely reports results to the C2 server.
-
-- **Advanced Code Injection**  
-  Downloads and executes Python payloads from SpecterPanel, allowing sophisticated red team simulations.
-
-- **Terminal‑Web Bridge**  
-  Provides live remote control by linking the local terminal with the web‑based SpecterPanel interface.
-
-- **Botnet Simulation Suite**  
-  Supports UDP flood testing, SSH brute‑force attacks, and custom botnet actions – all remotely controlled.
-
-- **Safe Mode**  
-  Offers a non‑destructive simulation mode for lab exercises and training scenarios.
-
-- **Persistent SQLite Tracking**  
-  Registers agents and maintains persistent state using SQLite for reliable agent management.
-
-- **Cross‑Platform Compatibility**  
-  Operates on Windows, Linux, and Android with adaptive system detection.
-
-- **Optional Kivy GUI**  
-  Includes a mobile‑style graphical interface (`main.py`) for local management and live agent status monitoring.
-
-- **Encrypted Communication**  
-  Uses AES‑EAX encryption for all sensitive data exchanged with the C2 server.
-
-- **Anti‑Analysis / VM Detection**  
-  Implements basic virtual machine and container detection to simulate evasion techniques (can be disabled for lab use).
-
----
-
-## 🕸️ Operational Workflow
-
-1. **Agent Registration**  
-   Upon launch, PhantomGate registers with SpecterPanel and stores target metadata locally in an SQLite database.
-
-2. **Dynamic Instruction Polling**  
-   Agents poll the C2 (SpecterPanel or a public control page) at configurable intervals for updated parameters, instructions, and payloads.
-
-3. **Task Execution**  
-   Received shell commands and Python code are executed on the agent. Output is securely transmitted back to the C2 server.
-
-4. **Botnet Actions**  
-   Agents may be instructed to perform UDP flood tests, SSH brute‑force attacks, or other botnet activities. Safe Mode ensures actions are simulated for demonstrations.
-
-5. **Reporting & Output**  
-   All command results, code outputs, and task statuses are reported to SpecterPanel via encrypted API calls.
-
----
-
-## 🏗️ Architecture & Components
-
-| File              | Description                                                                                   |
-|-------------------|-----------------------------------------------------------------------------------------------|
-| `PhantomGate.py`  | Core agent: handles C2 communication, command execution, code injection, and botnet actions. |
-| `setting.py`      | Configuration manager: stores API keys, encryption keys, network settings, and paths.        |
-| `main.py`         | Optional Kivy‑based GUI for local monitoring and database management.                         |
-
-- **Encryption**: All C2 communications are encrypted using AES‑EAX with a hardcoded key (change in `setting.py` for production).
-- **Database**: SQLite file (`db/targetData.db`) stores agent ID, registration status, thread permissions, and botnet state.
-- **Threading**: Botnet operations (UDP flood, brute‑force) run in separate threads controlled via permission flags.
-
----
-
-## 🔧 Installation & Setup
-
-### Prerequisites
-- Python 3.8+
-- Required packages: `requests`, `paramiko`, `pycryptodome`, `kivy` (optional for GUI)
-
-### Installation Steps
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/yourusername/PhantomGate.git
-   cd PhantomGate
-   ```
-
-2. **Install dependencies**  
-   ```bash
-   pip install -r requirements.txt
-   ```
-   *(Create a `requirements.txt` if not present: `requests paramiko pycryptodome kivy`)*
-
-3. **Configure the C2 server URL and API token**  
-   Edit `setting.py` and update:
-   ```python
-   self.url = 'http://your-c2-server.com'   # e.g., http://127.0.0.1:5000
-   self.API_TOKEN = 'your-api-token-here'
-   ```
-   > **Note:** The default token is a placeholder. **Change it immediately** for any real deployment.
-
-4. **(Optional) Enable persistence on Windows**  
-   Uncomment the call to `add_to_startup()` in `PhantomGate.py` to add the agent to startup.
-
----
-
-## ⚙️ Configuration
-
-All settings are managed in `setting.py` inside the `Setting` class. Key options:
-
-| Setting                 | Description                                                      |
-|-------------------------|------------------------------------------------------------------|
-| `ENCRYPTION_KEY`        | 16‑byte AES key (change for production).                        |
-| `url`                   | Base URL of the C2 server (SpecterPanel).                       |
-| `API_TOKEN`             | Authentication token for API access.                             |
-| `PORT`                  | List of ports used for UDP flood.                                |
-| `FAKE_HEADERS`          | Raw byte headers to prepend to UDP flood packets.               |
-| `BASE_DELAY` / `MAX_DELAY` / `MIN_DELAY` | Timing controls for UDP flood.                     |
-| `USER_AGENTS`           | List of user‑agent strings for HTTP requests.                    |
-| `MAIN_LOOP_DELAY`       | Polling interval (seconds) for fetching instructions.            |
-| `INSTRUCTION`           | Allowed instruction types from C2.                               |
-| `BOT_CATEGORY`          | Categories of botnet actions.                                    |
-| `BUILT_IN_COMMAND`      | Commands handled internally (e.g., `sys_info`, `bot`, `db_info`). |
-
----
-
-## 🚀 Usage
-
-### Start the Agent (Headless)
-```bash
-python PhantomGate.py
+```mermaid
+graph LR
+    A[SpecterPanel C2] -->|AES-256 Encrypted API| B[PhantomGate Agent]
+    B --> C[Remote Command Execution]
+    B --> D[Code Injection]
+    B --> E[Botnet Simulation]
+    B --> F[System Information Gathering]
+    
+    style A fill:#4f46e5,stroke:#fff,stroke-width:2px,color:#fff
+    style B fill:#10b981,stroke:#fff,stroke-width:2px,color:#fff
 ```
-The agent will:
-- Register with the C2 server.
-- Begin polling for instructions.
-- Execute commands and report results.
 
-### Start the GUI (Optional)
+---
+
+## ✨ KEY FEATURES
+
+<div align="center">
+  
+| Icon | Module | Description |
+|:----:|:--------|:------------|
+| 🔌 | **C2 Integration** | Seamless connection with SpecterPanel C2 server |
+| 💻 | **Remote Command Execution** | Execute shell commands on remote hosts with output reporting |
+| 📦 | **Code Injection** | Download and execute Python payloads from C2 server |
+| 🌐 | **Terminal-Web Bridge** | Live remote control via SpecterPanel web interface |
+| 🤖 | **Botnet Simulation** | UDP flood testing, SSH brute-force simulation |
+| 🛡️ | **Safe Mode** | Non-destructive simulation mode for lab environments |
+| 🗄️ | **SQLite Tracking** | Persistent agent state and command logging |
+| 🔐 | **AES-256 Encryption** | All C2 communication encrypted with AES-EAX mode |
+| 📱 | **Cross-Platform** | Runs on Windows, Linux, and Android (Termux) |
+| 🖥️ | **Kivy GUI** | Optional mobile-style interface for local management |
+| 🔍 | **System Info Gathering** | Collect OS, hardware, and network information |
+| 🧵 | **Multi-threading** | Concurrent botnet operations with thread management |
+
+</div>
+
+---
+
+## 🏗️ ARCHITECTURE
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                       PHANTOMGATE AGENT                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌─────────────────────┐      ┌─────────────────────┐          │
+│  │   C2 COMMUNICATION  │      │   COMMAND ENGINE    │          │
+│  │  • API Client       │      │  • Shell Execution  │          │
+│  │  • AES Encryption   │      │  • Built-in Commands│          │
+│  │  • Polling Loop     │◄────►│  • Output Handling  │          │
+│  │  • Target Register  │      │  • Error Management │          │
+│  └─────────────────────┘      └─────────────────────┘          │
+│            ▲                              ▲                     │
+│            │                              │                     │
+│            ▼                              ▼                     │
+│  ┌─────────────────────┐      ┌─────────────────────┐          │
+│  │   CODE INJECTION    │      │    BOTNET ENGINE    │          │
+│  │  • Payload Fetch    │      │  • UDP Flood        │          │
+│  │  • Dynamic Import   │      │  • SSH Brute Force  │          │
+│  │  • Execution Sandbox│      │  • Thread Manager   │          │
+│  │  • Output Reporting │      │  • Safe Mode Switch │          │
+│  └─────────────────────┘      └─────────────────────┘          │
+│            ▲                              ▲                     │
+│            └──────────────┬───────────────┘                     │
+│                           │                                      │
+│                    ┌──────┴──────┐                              │
+│                    │  SQLite DB   │                              │
+│                    │ • Agents    │                              │
+│                    │ • Commands  │                              │
+│                    │ • Bot State │                              │
+│                    └─────────────┘                              │
+│                           │                                      │
+│              ┌────────────┴────────────┐                        │
+│              │                         │                        │
+│      ┌───────▼───────┐         ┌───────▼───────┐                │
+│      │   HEADLESS    │         │   KIVY GUI    │                │
+│      │    MODE       │         │  (main.py)    │                │
+│      │  Background   │         │  Interactive  │                │
+│      │   Service     │         │  Management   │                │
+│      └───────────────┘         └───────────────┘                │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+                           │
+                    AES-256 Encrypted
+                    JSON over HTTPS
+                           │
+                    ┌──────▼──────┐
+                    │ SpecterPanel │
+                    │    C2        │
+                    └──────────────┘
+```
+
+---
+
+## 🔧 INSTALLATION
+
 ```bash
+# Clone the repository
+git clone https://github.com/omerKkemal/PhantomGate.git
+cd PhantomGate
+
+# Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Configure the agent (edit setting.py)
+nano setting.py  # Set C2 URL and API token
+
+# Run the agent (headless mode)
+python PhantomGate.py
+
+# OR run with GUI
 python main.py
 ```
-The Kivy GUI allows you to:
-- Add/remove target names in the local database.
-- Monitor agent status.
-- Manually trigger cleanup and thread management.
 
-### Built‑in Commands (via C2)
-Once connected, you can send commands from SpecterPanel. Examples:
-
-- `ls -la` – List directory contents.
-- `sys_info` – Gather system information (OS, hardware, network).
-- `bot start <thread_id>` – Start a botnet action (UDP flood, brute‑force) as defined by C2 instructions.
-- `bot stop <thread_id>` – Stop a running botnet action.
-- `db_info` – Retrieve local database information.
-
-### Code Injection
-PhantomGate can fetch and execute Python scripts from the C2 using the `/api/injection/<target>` endpoint. Output is returned via `/api/injection_output_save`.
-
----
-
-## 🔗 API Endpoints (SpecterPanel)
-
-The agent communicates with SpecterPanel via the following encrypted endpoints (all payloads are AES‑encrypted JSON):
-
-| Endpoint                                | Method | Description                                      |
-|-----------------------------------------|--------|--------------------------------------------------|
-| `/api/v1.2/register_target`             | POST   | Register a new agent.                            |
-| `/api/v1.2/ApiCommand/<target>`         | GET    | Retrieve shell commands for the agent.           |
-| `/api/v1.2/Apicommand/save_output`      | POST   | Submit command execution results.                 |
-| `/api/v1.2/BotNet/<target>`             | GET    | Fetch botnet instructions (UDP flood, brute force). |
-| `/api/v1.2/get_instruction/<target>`    | GET    | Obtain high‑level operational instructions.       |
-| `/api/v1.2/injection/<target>`          | GET    | Retrieve Python payloads for remote code execution. |
-| `/api/v1.2/injection_output_save`       | POST   | Submit output of executed payloads.               |
-
-> **Note:** The API version (v1.2) and endpoints may change. Refer to the SpecterPanel documentation for the latest.
-
----
-
-## 💻 Cross‑Platform Compatibility
-
-| OS      | Tested | Notes                                                                 |
-|---------|--------|-----------------------------------------------------------------------|
-| Windows | ✅     | Full support, including registry persistence.                         |
-| Linux   | ✅     | Works on major distributions (Ubuntu, Debian, CentOS).               |
-| Android | ✅     | Detects Android via environment variables; requires Termux or similar.|
-| macOS   | ⚠️     | Likely works but not officially tested.                               |
-
----
-
-## 🛡️ Safe Mode
-
-For training and lab environments, PhantomGate includes a **Safe Mode** that simulates destructive actions without actually performing them. To enable Safe Mode, set an environment variable or modify the code:
-
-```python
-SAFE_MODE = True   # in PhantomGate.py
+### Quick Install Script (Linux/macOS)
+```bash
+chmod +x install.sh
+./install.sh
 ```
 
-When Safe Mode is active:
-- UDP flood packets are **not sent**; only logging occurs.
-- Brute‑force attempts are logged but not executed.
-- File transfer and server functions are simulated.
+### Quick Install Script (Windows)
+```batch
+install.bat
+```
 
 ---
 
-## 🔗 Related Project
+## ⚙️ CONFIGURATION
 
-- **SpecterPanel (C2 Server)**  
-  The command‑and‑control server that manages PhantomGate agents.  
-  [https://github.com/omerKkemal/oh-tool-v2](https://github.com/omerKkemal/oh-tool-v2)
+All settings are managed in `setting.py`. Here's the complete configuration structure:
+
+```python
+class Setting:
+    def __init__(self):
+        # ===== ENCRYPTION =====
+        # 16-byte AES key - CHANGE THIS FOR PRODUCTION!
+        self.ENCRYPTION_KEY = b'your-16-byte-key-here'
+        
+        # ===== C2 SERVER =====
+        # SpecterPanel URL (no trailing slash)
+        self.url = 'http://127.0.0.1:5000'
+        # API token from SpecterPanel settings
+        self.API_TOKEN = 'your-api-token-here'
+        
+        # ===== UDP FLOOD SETTINGS =====
+        # Target ports for UDP flood
+        self.PORT = [80, 443, 8080, 22, 3389, 53, 123]
+        # Raw packet headers (customize for simulation)
+        self.FAKE_HEADERS = b'\x00\x01\x02\x03\x04\x05\x06\x07'
+        # Timing controls (seconds)
+        self.BASE_DELAY = 0.1      # Base delay between packets
+        self.MAX_DELAY = 5.0       # Maximum random delay
+        self.MIN_DELAY = 0.01       # Minimum random delay
+        
+        # ===== HTTP REQUESTS =====
+        # User agents for HTTP requests
+        self.USER_AGENTS = [
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36',
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+            'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15',
+        ]
+        
+        # ===== TIMING =====
+        # Main loop polling interval (seconds)
+        self.MAIN_LOOP_DELAY = 5
+        
+        # ===== COMMAND CONFIGURATION =====
+        # Allowed instruction types from C2
+        self.INSTRUCTION = ['command', 'code', 'bot']
+        # Botnet action categories
+        self.BOT_CATEGORY = ['udp', 'brut']
+        # Built-in commands (processed locally)
+        self.BUILT_IN_COMMAND = ['sys_info', 'bot', 'db_info']
+        
+        # ===== DATABASE =====
+        # SQLite database path
+        self.DB_PATH = 'db/targetData.db'
+```
 
 ---
 
-## ⚠️ Security & Ethics Notice
+## 🚀 USAGE
 
-PhantomGate is a **powerful tool** capable of remote command and code execution, network flooding, and credential brute‑forcing.  
+### Headless Mode (Background Agent)
+```bash
+# Start the agent with default settings
+python PhantomGate.py
 
-- **Intended Use:** Authorized penetration testing, red team exercises, and security education in isolated lab environments.
-- **Prohibited Use:** Any unauthorized access to systems, networks, or data without explicit permission.  
-- **Legal Compliance:** You must comply with all local, national, and international laws. Unauthorized use may lead to severe criminal and civil penalties.
+# With custom config file
+python PhantomGate.py --config /path/to/custom_setting.py
 
-The author, contributors, and any affiliated entities **do not condone illegal activity** and are **not responsible** for misuse. By using this software, you agree to use it **only for lawful purposes** and accept full responsibility for your actions.
+# Safe mode (simulation only)
+python PhantomGate.py --safe-mode
+
+# Verbose logging
+python PhantomGate.py --verbose
+
+# Run as daemon (Linux)
+nohup python PhantomGate.py &
+```
+
+### GUI Mode (Kivy Interface)
+```bash
+# Launch the GUI
+python main.py
+
+# GUI Features:
+# • Target Management - Add/remove targets from database
+# • Status Monitor - View agent health and connectivity
+# • Command History - Browse executed commands
+# • Thread Control - Start/stop botnet operations
+# • Database Viewer - Browse SQLite contents
+# • Log Viewer - Real-time log monitoring
+```
+
+### Built-in Commands (Sent from C2)
+
+| Command Category | Command | Description | Example |
+|:-----------------|:--------|:------------|:---------|
+| **System** | `sys_info` | Gather OS, hardware, network info | `sys_info` |
+| | `db_info` | Retrieve local database stats | `db_info` |
+| | `get_logs` | Fetch recent agent logs | `get_logs 50` |
+| **Botnet** | `bot start udp` | Start UDP flood (thread ID: udp_1) | `bot start udp_1` |
+| | `bot start brut` | Start SSH brute force | `bot start brut_1` |
+| | `bot stop <id>` | Stop specific thread | `bot stop udp_1` |
+| | `bot list` | List active threads | `bot list` |
+| | `bot status <id>` | Check thread status | `bot status udp_1` |
+| **Shell** | `shell <cmd>` | Execute any shell command | `shell ls -la` |
+| | `shell powershell <cmd>` | PowerShell on Windows | `shell powershell Get-Process` |
+| **Code** | `code exec <name>` | Execute injected code | `code exec keylogger` |
+| | `code list` | List available payloads | `code list` |
 
 ---
 
-## 🤝 Contributing
+## 🔌 API ENDPOINTS (SpecterPanel)
 
-Contributions that improve the framework, add new lab scenarios, or fix bugs are welcome.  
-Please follow these steps:
+The agent communicates with SpecterPanel via these encrypted endpoints. All payloads are wrapped in AES-256-EAX encryption.
 
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+### Endpoint Reference
 
-For major changes, please open an issue first to discuss what you would like to change.
+| Endpoint | Method | Frequency | Description |
+|:---------|:------:|:---------:|:------------|
+| `/api/v1.2/register_target` | `POST` | Once | Register agent with C2 |
+| `/api/v1.2/ApiCommand/<target>` | `GET` | Every poll | Fetch pending commands |
+| `/api/v1.2/Apicommand/save_output` | `POST` | After command | Submit command output |
+| `/api/v1.2/BotNet/<target>` | `GET` | Every poll | Get botnet instructions |
+| `/api/v1.2/get_instruction/<target>` | `GET` | Every poll | Get operational instructions |
+| `/api/v1.2/injection/<target>` | `GET` | When instructed | Download Python payload |
+| `/api/v1.2/injection_output_save` | `POST` | After injection | Submit payload output |
+
+### Encrypted Communication Format
+
+```json
+{
+    "nonce": "base64_encoded_nonce",
+    "ciphertext": "base64_encoded_encrypted_data",
+    "tag": "base64_encoded_authentication_tag"
+}
+```
+
+### Example: Command Output Submission
+
+```python
+# Plaintext payload before encryption
+{
+    "target": "workstation-01",
+    "command": "whoami",
+    "output": "administrator",
+    "status": "success",
+    "timestamp": "2024-01-28T14:32:15Z"
+}
+
+# Encrypted wrapper sent to C2
+{
+    "nonce": "a1b2c3d4e5f6...",
+    "ciphertext": "Zy8x3kPq9mN...",
+    "tag": "7f9a2c4d..."
+}
+```
 
 ---
 
-## 📜 License
+## 💻 CROSS‑PLATFORM COMPATIBILITY
 
-**For educational and authorized research use only.**  
-No license is granted for malicious or unauthorized applications. Redistribution or commercial use without explicit permission is prohibited.
+| Platform | Status | Tested Versions | Requirements | Notes |
+|:---------|:------:|:----------------|:-------------|:------|
+| **Windows** | ✅ Full | 10, 11, Server 2019/2022 | Python 3.8+ | Registry persistence, full shell access |
+| **Linux** | ✅ Full | Ubuntu 20.04+, Debian 11+, CentOS 8+ | Python 3.8+ | Bash/zsh support, daemon mode |
+| **Android** | ✅ Full | Android 10+ | Termux + Python | Limited shell, file system access |
+| **macOS** | ⚠️ Beta | Monterey, Ventura | Python 3.8+ | Limited testing, BSD commands |
+| **FreeBSD** | ⚠️ Beta | 13.x | Python 3.8+ | Community supported |
+| **iOS** | ❌ No | - | - | Not supported |
+
+### Platform Detection
+PhantomGate automatically detects the operating system and adjusts:
+- **Windows**: Uses cmd.exe or PowerShell, registry for persistence
+- **Linux/Unix**: Uses /bin/sh or /bin/bash, crontab for persistence
+- **Android**: Detects via environment variables, uses Termux environment
 
 ---
 
-## ✍️ Author
+## 🛡️ SAFE MODE
 
+For training and lab environments, PhantomGate includes a **Safe Mode** that simulates destructive actions without actual execution.
+
+### Enabling Safe Mode
+
+```python
+# Method 1: Environment variable
+export PHANTOMGATE_SAFE_MODE=1
+python PhantomGate.py
+
+# Method 2: Modify PhantomGate.py (line ~50)
+SAFE_MODE = True  # Set to True for simulation
+
+# Method 3: Command line flag
+python PhantomGate.py --safe-mode
+
+# Method 4: Configuration file
+# Add to setting.py
+self.SAFE_MODE = True
+```
+
+### Safe Mode Behavior Comparison
+
+| Action | Normal Mode | Safe Mode |
+|:-------|:-----------:|:---------:|
+| **UDP Flood** | Actual UDP packets sent | Packets logged, no network transmission |
+| **SSH Brute Force** | Actual authentication attempts | Credentials logged, connection simulated |
+| **File Operations** | Real file creation/modification | Operations logged, no file changes |
+| **Registry Changes** | Actual registry modifications | Registry read-only, changes logged |
+| **Process Creation** | Real processes spawned | Process creation simulated |
+| **Network Connections** | Actual connections made | Connections simulated, no data sent |
+| **Persistence** | Adds to startup/registry | Startup methods logged only |
+
+### Safe Mode Logging Example
+```
+[SAFE MODE] UDP flood prevented: would send 1000 packets to 192.168.1.100:80
+[SAFE MODE] SSH brute force simulated: attempted 50 passwords against root@10.0.0.5
+[SAFE MODE] File write prevented: would create C:\temp\output.txt
+```
+
+---
+
+## 🔗 RELATED PROJECT
+
+### SpecterPanel C2 Server
+The official command‑and‑control server that manages PhantomGate agents.
+
+```
+┌─────────────────┐     AES-256     ┌─────────────────┐
+│  SpecterPanel   │ ◄──────────────► │  PhantomGate    │
+│  C2 Server      │     Encrypted    │  Agent          │
+└─────────────────┘     API          └─────────────────┘
+```
+
+**Features:**
+- Web-based dashboard for agent management
+- Real-time command execution
+- Code injection panel
+- Botnet instruction distribution
+- Multi-user support
+- API token authentication
+
+**Repository:** [https://github.com/omerKkemal/oh-tool-v2](https://github.com/omerKkemal/oh-tool-v2)
+
+---
+
+## ⚠️ SECURITY & ETHICS NOTICE
+
+PhantomGate is a **powerful tool** with capabilities that include:
+
+### 🔴 Capabilities
+- Remote command execution on target systems
+- Python code injection and execution
+- Network traffic generation (UDP flood simulation)
+- SSH brute-force simulation
+- System information gathering
+- Persistence mechanisms
+- Anti-analysis techniques
+
+### ⚖️ Authorized Use Cases
+- ✅ Penetration testing with written authorization
+- ✅ Red team exercises in controlled environments
+- ✅ Security research in isolated labs
+- ✅ Educational demonstrations
+- ✅ C2 framework development and testing
+- ✅ Defense mechanism evaluation
+
+### ❌ Prohibited Use Cases
+- ❌ Unauthorized access to any system
+- ❌ Criminal or malicious activities
+- ❌ Production systems without permission
+- ❌ Violation of computer fraud laws
+- ❌ Any use causing harm or damage
+
+### 📜 Legal Compliance
+Users must comply with:
+- Local, state, and federal laws
+- Computer Fraud and Abuse Act (CFAA) in the US
+- Similar laws in other jurisdictions
+- Organizational policies and authorizations
+
+> **BY USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT:**
+> - You have read and understood this notice
+> - You will only use this software for authorized purposes
+> - You accept full responsibility for your actions
+> - The author bears no liability for misuse
+
+---
+
+## 🤝 CONTRIBUTING
+
+Contributions that improve the framework, add new lab scenarios, or fix bugs are welcome.
+
+### Contribution Guidelines
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
+3. **Commit** your changes (`git commit -m 'Add AmazingFeature'`)
+4. **Push** to the branch (`git push origin feature/AmazingFeature`)
+5. **Open** a Pull Request
+
+### Contribution Areas
+- 🐛 Bug fixes and performance improvements
+- 🔒 Enhanced encryption or security features
+- 📱 Additional platform support
+- 🎨 GUI improvements
+- 📚 Documentation enhancements
+- 🧪 New simulation modules
+
+For major changes, please open an issue first to discuss your ideas.
+
+---
+
+## 📜 LICENSE
+
+**Educational and Authorized Research Use Only**
+
+Copyright © 2024 Omer Kemal
+
+This software is provided **solely for educational purposes and authorized security research**. No license, express or implied, is granted for any unauthorized or commercial use.
+
+### Permissions
+- ✅ Educational use in academic settings
+- ✅ Authorized penetration testing
+- ✅ Security research in lab environments
+- ✅ Personal learning and development
+
+### Restrictions
+- ❌ No commercial use without explicit permission
+- ❌ No redistribution for malicious purposes
+- ❌ No unauthorized deployment
+- ❌ No modification for illegal activities
+
+**Disclaimer:** This software comes with ABSOLUTELY NO WARRANTY. The author is not responsible for any misuse or damages resulting from the use of this software.
+
+---
+
+## ✍️ AUTHOR
+
+<div align="center">
+  
 **Omer Kemal**  
-- C2 Server: [SpecterPanel](https://github.com/omerKkemal/oh-tool-v2)  
-- Agent: PhantomGate  
+*Security Researcher & Developer*
+
+| Project | Link |
+|:--------|:-----|
+| **C2 Server** | [SpecterPanel](https://github.com/omerKkemal/oh-tool-v2) |
+| **Agent** | [PhantomGate](https://github.com/omerKkemal/PhantomGate) |
+| **Purpose** | Security Education & Research |
 
 For questions, feedback, or responsible disclosure, please open an issue on GitHub.
 
+</div>
+
 ---
+
+<!-- FOOTER -->
+<p align="center">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=16&duration=3000&pause=500&color=10B981&center=true&vCenter=true&width=400&lines=Educational+Use+Only;Authorized+Research+Only;Red+Team+Simulation;Security+Education" alt="Footer Typing SVG" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/PhantomGate-Educational%20Use%20Only-10b981?style=for-the-badge">
+  <img src="https://img.shields.io/badge/C2%20Integration-SpecterPanel-4f46e5?style=for-the-badge">
+  <br>
+  <sub>© 2024 PhantomGate. For Authorized Security Research Only.</sub>
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&gradient=10b981,4f46e5,f59e0b"/>
+</p>
