@@ -1,8 +1,4 @@
 <!--- Animated Header --->
-<p align="center">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=32&duration=2000&pause=500&color=4F46E5&center=true&vCenter=true&width=600&lines=PhantomGate+Agent;Remote+Administration+Tool;Botnet+Simulation+Framework;Red+Team+Operations;Security+Research" alt="Typing SVG" />
-</p>
-
 <!-- MAIN TITLE -->
 <p align="center">
   <img src="https://img.shields.io/badge/PHANTOMGATE-MULTI--PURPOSE%20RAT-10b981?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e" alt="PhantomGate">
@@ -52,13 +48,13 @@
 
 ---
 
-## ⚠️ CRITICAL NOTICE
+## CRITICAL NOTICE
 
 <p align="center">
   <table>
     <tr>
       <td align="center" style="background: #1a1a2e; border-left: 6px solid #ff4d4d; border-radius: 10px; padding: 15px;">
-        <strong>🔴 EDUCATIONAL USE ONLY 🔴</strong><br>
+        <strong> EDUCATIONAL USE ONLY </strong><br>
         This tool is strictly for <strong>authorized security research, red team exercises, and educational purposes</strong>.<br>
         Unauthorized use is illegal and unethical. Users must comply with all applicable laws.<br>
         <em>The author assumes NO liability for misuse or damages.</em>
@@ -69,7 +65,7 @@
 
 ---
 
-## 📋 NAVIGATION MENU
+## NAVIGATION MENU
 
 <p align="center">
   <a href="#-overview"><img src="https://img.shields.io/badge/Overview-10b981?style=for-the-badge&logo=homeassistant&logoColor=white"></a>
@@ -84,7 +80,7 @@
 
 ---
 
-## 🔭 OVERVIEW
+## OVERVIEW
 
 **PhantomGate** is a cross‑platform, modular remote administration tool (RAT) and botnet simulation agent developed for **ethical red teaming, security research, and controlled command‑and‑control (C2) demonstrations**. It works in tandem with **SpecterPanel**, a dedicated C2 server, to provide a modern, extensible framework for understanding and simulating advanced C2 operations in secure, lab‑friendly environments.
 
@@ -102,30 +98,30 @@ graph LR
 
 ---
 
-## ✨ KEY FEATURES
+## KEY FEATURES
 
 <div align="center">
   
-| Icon | Module | Description |
-|:----:|:--------|:------------|
-| 🔌 | **C2 Integration** | Seamless connection with SpecterPanel C2 server |
-| 💻 | **Remote Command Execution** | Execute shell commands on remote hosts with output reporting |
-| 📦 | **Code Injection** | Download and execute Python payloads from C2 server |
-| 🌐 | **Terminal-Web Bridge** | Live remote control via SpecterPanel web interface |
-| 🤖 | **Botnet Simulation** | UDP flood testing, SSH brute-force simulation |
-| 🛡️ | **Safe Mode** | Non-destructive simulation mode for lab environments |
-| 🗄️ | **SQLite Tracking** | Persistent agent state and command logging |
-| 🔐 | **AES-256 Encryption** | All C2 communication encrypted with AES-EAX mode |
-| 📱 | **Cross-Platform** | Runs on Windows, Linux, and Android (Termux) |
-| 🖥️ | **Kivy GUI** | Optional mobile-style interface for local management |
-| 🔍 | **System Info Gathering** | Collect OS, hardware, and network information |
-| 🧵 | **Multi-threading** | Concurrent botnet operations with thread management |
+| Module | Description |
+|:--------|:------------|
+| **C2 Integration** | Seamless connection with SpecterPanel C2 server |
+| **Remote Command Execution** | Execute shell commands on remote hosts with output reporting |
+| **Code Injection** | Download and execute Python payloads from C2 server |
+| **Terminal-Web Bridge** | Live remote control via SpecterPanel web interface |
+| **Botnet Simulation** | UDP flood testing, SSH brute-force simulation |
+| **Safe Mode** | Non-destructive simulation mode for lab environments |
+| **SQLite Tracking** | Persistent agent state and command logging |
+| **AES-256 Encryption** | All C2 communication encrypted with AES-EAX mode |
+| **Cross-Platform** | Runs on Windows, Linux, and Android (Termux) |
+| **Kivy GUI** | Optional mobile-style interface for local management |
+| **System Info Gathering** | Collect OS, hardware, and network information |
+| **Multi-threading** | Concurrent botnet operations with thread management |
 
 </div>
 
 ---
 
-## 🏗️ ARCHITECTURE
+## ARCHITECTURE
 
 ```
                 ┌────────────────────────────────────────────────────────┐
@@ -181,7 +177,7 @@ graph LR
 
 ---
 
-## 🔧 INSTALLATION
+## INSTALLATION
 
 ```bash
 # Clone the repository
@@ -218,7 +214,7 @@ install.bat
 
 ---
 
-## ⚙️ CONFIGURATION
+## CONFIGURATION
 
 All settings are managed in `setting.py`. Here's the complete configuration structure:
 
@@ -273,7 +269,7 @@ class Setting:
 
 ---
 
-## 🚀 USAGE
+## USAGE
 
 ### Headless Mode (Background Agent)
 ```bash
@@ -369,9 +365,9 @@ The agent communicates with SpecterPanel via these encrypted endpoints. All payl
 
 | Platform | Status | Tested Versions | Requirements | Notes |
 |:---------|:------:|:----------------|:-------------|:------|
-| **Windows** | ✅ Full | 10, 11, Server 2019/2022 | Python 3.8+ | Registry persistence, full shell access |
-| **Linux** | ✅ Full | Ubuntu 20.04+, Debian 11+, CentOS 8+ | Python 3.8+ | Bash/zsh support, daemon mode |
-| **Android** | ✅ Full | Android 10+ | Termux + Python | Limited shell, file system access |
+| **Windows** | Full | 10, 11, Server 2019/2022 | Python 3.8+ | Registry persistence, full shell access |
+| **Linux** | Full | Ubuntu 20.04+, Debian 11+, CentOS 8+ | Python 3.8+ | Bash/zsh support, daemon mode |
+| **Android** | Full | Android 10+ | Termux + Python | Limited shell, file system access |
 
 ### Platform Detection
 PhantomGate automatically detects the operating system and adjusts:
@@ -448,11 +444,11 @@ The official command‑and‑control server that manages PhantomGate agents.
 
 ---
 
-## ⚠️ SECURITY & ETHICS NOTICE
+## SECURITY & ETHICS NOTICE
 
 PhantomGate is a **powerful tool** with capabilities that include:
 
-### 🔴 Capabilities
+### Capabilities
 - Remote command execution on target systems
 - Python code injection and execution
 - Network traffic generation (UDP flood simulation)
@@ -461,22 +457,22 @@ PhantomGate is a **powerful tool** with capabilities that include:
 - Persistence mechanisms
 - Anti-analysis techniques
 
-### ⚖️ Authorized Use Cases
-- ✅ Penetration testing with written authorization
-- ✅ Red team exercises in controlled environments
-- ✅ Security research in isolated labs
-- ✅ Educational demonstrations
-- ✅ C2 framework development and testing
-- ✅ Defense mechanism evaluation
+### Authorized Use Cases
+- enetration testing with written authorization
+- Red team exercises in controlled environments
+- Security research in isolated labs
+- Educational demonstrations
+- C2 framework development and testing
+- Defense mechanism evaluation
 
-### ❌ Prohibited Use Cases
-- ❌ Unauthorized access to any system
-- ❌ Criminal or malicious activities
-- ❌ Production systems without permission
-- ❌ Violation of computer fraud laws
-- ❌ Any use causing harm or damage
+### Unauthorized Use Cases
+- Unauthorized access to any system
+- Criminal or malicious activities
+- Production systems without permission
+- Violation of computer fraud laws
+- Any use causing harm or damage
 
-### 📜 Legal Compliance
+### Legal Compliance
 Users must comply with:
 - Local, state, and federal laws
 - Computer Fraud and Abuse Act (CFAA) in the US
@@ -491,7 +487,7 @@ Users must comply with:
 
 ---
 
-## 🤝 CONTRIBUTING
+## CONTRIBUTING
 
 Contributions that improve the framework, add new lab scenarios, or fix bugs are welcome.
 
@@ -504,18 +500,18 @@ Contributions that improve the framework, add new lab scenarios, or fix bugs are
 5. **Open** a Pull Request
 
 ### Contribution Areas
-- 🐛 Bug fixes and performance improvements
-- 🔒 Enhanced encryption or security features
-- 📱 Additional platform support
-- 🎨 GUI improvements
-- 📚 Documentation enhancements
-- 🧪 New simulation modules
+- Bug fixes and performance improvements
+- Enhanced encryption or security features
+- Additional platform support
+- GUI improvements
+- Documentation enhancements
+- New simulation modules
 
 For major changes, please open an issue first to discuss your ideas.
 
 ---
 
-## 📜 LICENSE
+## LICENSE
 
 **Educational and Authorized Research Use Only**
 
@@ -524,22 +520,22 @@ Copyright © 2024 Omer Kemal
 This software is provided **solely for educational purposes and authorized security research**. No license, express or implied, is granted for any unauthorized or commercial use.
 
 ### Permissions
-- ✅ Educational use in academic settings
-- ✅ Authorized penetration testing
-- ✅ Security research in lab environments
-- ✅ Personal learning and development
+- Educational use in academic settings
+- Authorized penetration testing
+- Security research in lab environments
+- Personal learning and development
 
 ### Restrictions
-- ❌ No commercial use without explicit permission
-- ❌ No redistribution for malicious purposes
-- ❌ No unauthorized deployment
-- ❌ No modification for illegal activities
+- No commercial use without explicit permission
+- No redistribution for malicious purposes
+- No unauthorized deployment
+- No modification for illegal activities
 
 **Disclaimer:** This software comes with ABSOLUTELY NO WARRANTY. The author is not responsible for any misuse or damages resulting from the use of this software.
 
 ---
 
-## ✍️ AUTHOR
+## AUTHOR
 
 <div align="center">
   
@@ -560,16 +556,8 @@ For questions, feedback, or responsible disclosure, please open an issue on GitH
 
 <!-- FOOTER -->
 <p align="center">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=16&duration=3000&pause=500&color=10B981&center=true&vCenter=true&width=400&lines=Educational+Use+Only;Authorized+Research+Only;Red+Team+Simulation;Security+Education" alt="Footer Typing SVG" />
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/PhantomGate-Educational%20Use%20Only-10b981?style=for-the-badge">
   <img src="https://img.shields.io/badge/C2%20Integration-SpecterPanel-4f46e5?style=for-the-badge">
   <br>
   <sub>© 2024 PhantomGate. For Authorized Security Research Only.</sub>
-</p>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&gradient=10b981,4f46e5,f59e0b"/>
 </p>
