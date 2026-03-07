@@ -280,15 +280,6 @@ class Setting:
 # Start the agent with default settings
 python PhantomGate.py
 
-# With custom config file
-python PhantomGate.py --config /path/to/custom_setting.py
-
-# Safe mode (simulation only)
-python PhantomGate.py --safe-mode
-
-# Verbose logging
-python PhantomGate.py --verbose
-
 # Run as daemon (Linux)
 nohup python PhantomGate.py &
 ```
@@ -381,9 +372,6 @@ The agent communicates with SpecterPanel via these encrypted endpoints. All payl
 | **Windows** | ✅ Full | 10, 11, Server 2019/2022 | Python 3.8+ | Registry persistence, full shell access |
 | **Linux** | ✅ Full | Ubuntu 20.04+, Debian 11+, CentOS 8+ | Python 3.8+ | Bash/zsh support, daemon mode |
 | **Android** | ✅ Full | Android 10+ | Termux + Python | Limited shell, file system access |
-| **macOS** | ⚠️ Beta | Monterey, Ventura | Python 3.8+ | Limited testing, BSD commands |
-| **FreeBSD** | ⚠️ Beta | 13.x | Python 3.8+ | Community supported |
-| **iOS** | ❌ No | - | - | Not supported |
 
 ### Platform Detection
 PhantomGate automatically detects the operating system and adjusts:
@@ -442,7 +430,7 @@ self.SAFE_MODE = True
 The official command‑and‑control server that manages PhantomGate agents.
 
 ```
-┌─────────────────┐     AES-256     ┌─────────────────┐
+┌─────────────────┐     AES-256      ┌─────────────────┐
 │  SpecterPanel   │ ◄──────────────► │  PhantomGate    │
 │  C2 Server      │     Encrypted    │  Agent          │
 └─────────────────┘     API          └─────────────────┘
