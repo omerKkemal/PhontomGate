@@ -128,55 +128,55 @@ graph LR
 ## 🏗️ ARCHITECTURE
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                       PHANTOMGATE AGENT                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  ┌─────────────────────┐      ┌─────────────────────┐          │
-│  │   C2 COMMUNICATION  │      │   COMMAND ENGINE    │          │
-│  │  • API Client       │      │  • Shell Execution  │          │
-│  │  • AES Encryption   │      │  • Built-in Commands│          │
-│  │  • Polling Loop     │◄────►│  • Output Handling  │          │
-│  │  • Target Register  │      │  • Error Management │          │
-│  └─────────────────────┘      └─────────────────────┘          │
-│            ▲                              ▲                     │
-│            │                              │                     │
-│            ▼                              ▼                     │
-│  ┌─────────────────────┐      ┌─────────────────────┐          │
-│  │   CODE INJECTION    │      │    BOTNET ENGINE    │          │
-│  │  • Payload Fetch    │      │  • UDP Flood        │          │
-│  │  • Dynamic Import   │      │  • SSH Brute Force  │          │
-│  │  • Execution Sandbox│      │  • Thread Manager   │          │
-│  │  • Output Reporting │      │  • Safe Mode Switch │          │
-│  └─────────────────────┘      └─────────────────────┘          │
-│            ▲                              ▲                     │
-│            └──────────────┬───────────────┘                     │
-│                           │                                      │
-│                    ┌──────┴──────┐                              │
-│                    │  SQLite DB   │                              │
-│                    │ • Agents    │                              │
-│                    │ • Commands  │                              │
-│                    │ • Bot State │                              │
-│                    └─────────────┘                              │
-│                           │                                      │
-│              ┌────────────┴────────────┐                        │
-│              │                         │                        │
-│      ┌───────▼───────┐         ┌───────▼───────┐                │
-│      │   HEADLESS    │         │   KIVY GUI    │                │
-│      │    MODE       │         │  (main.py)    │                │
-│      │  Background   │         │  Interactive  │                │
-│      │   Service     │         │  Management   │                │
-│      └───────────────┘         └───────────────┘                │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-                           │
-                    AES-256 Encrypted
-                    JSON over HTTPS
-                           │
-                    ┌──────▼──────┐
-                    │ SpecterPanel │
-                    │    C2        │
-                    └──────────────┘
+                        ┌─────────────────────────────────────────────────────────────────┐
+                        │                       PHANTOMGATE AGENT                         │
+                        ├─────────────────────────────────────────────────────────────────┤
+                        │                                                                 │
+                        │  ┌─────────────────────┐      ┌─────────────────────┐           │
+                        │  │   C2 COMMUNICATION  │      │   COMMAND ENGINE    │           │
+                        │  │  • API Client       │      │  • Shell Execution  │           │
+                        │  │  • AES Encryption   │      │  • Built-in Commands│           │
+                        │  │  • Polling Loop     │◄────►│  • Output Handling  │           │
+                        │  │  • Target Register  │      │  • Error Management │           │
+                        │  └─────────────────────┘      └─────────────────────┘           │
+                        │            ▲                              ▲                     │
+                        │            │                              │                     │
+                        │            ▼                              ▼                     │
+                        │  ┌─────────────────────┐      ┌─────────────────────┐           │
+                        │  │   CODE INJECTION    │      │    BOTNET ENGINE    │           │
+                        │  │  • Payload Fetch    │      │  • UDP Flood        │           │
+                        │  │  • Dynamic Import   │      │  • SSH Brute Force  │           │
+                        │  │  • Execution Sandbox│      │  • Thread Manager   │           │
+                        │  │  • Output Reporting │      │  • Safe Mode Switch │           │
+                        │  └─────────────────────┘      └─────────────────────┘           │
+                        │            ▲                              ▲                     │
+                        │            └──────────────┬───────────────┘                     │
+                        │                           │                                     │
+                        │                    ┌──────┴──────┐                              │
+                        │                    │  SQLite DB  │                              │
+                        │                    │ • Agents    │                              │
+                        │                    │ • Commands  │                              │
+                        │                    │ • Bot State │                              │
+                        │                    └─────────────┘                              │
+                        │                           │                                     │
+                        │              ┌────────────┴────────────┐                        │
+                        │              │                         │                        │
+                        │      ┌───────▼───────┐         ┌───────▼───────┐                │
+                        │      │   HEADLESS    │         │   KIVY GUI    │                │
+                        │      │    MODE       │         │  (main.py)    │                │
+                        │      │  Background   │         │  Interactive  │                │
+                        │      │   Service     │         │  Management   │                │
+                        │      └───────────────┘         └───────────────┘                │
+                        │                                                                 │
+                        └─────────────────────────────────────────────────────────────────┘
+                                                   │
+                                            AES-256 Encrypted
+                                            JSON over HTTPS
+                                                   │
+                                            ┌──────▼──────┐
+                                            │ SpecterPanel│
+                                            │    C2       │
+                                            └─────────────┘
 ```
 
 ---
