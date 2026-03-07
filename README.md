@@ -420,7 +420,7 @@ self.SAFE_MODE = True
 
 ---
 
-## 🔗 RELATED PROJECT
+## RELATED PROJECT
 
 ### SpecterPanel C2 Server
 The official command‑and‑control server that manages PhantomGate agents.
