@@ -313,7 +313,7 @@ python main.py
 
 ---
 
-## 🔌 API ENDPOINTS (SpecterPanel)
+## API ENDPOINTS (SpecterPanel)
 
 The agent communicates with SpecterPanel via these encrypted endpoints. All payloads are wrapped in AES-256-EAX encryption.
 
@@ -361,7 +361,7 @@ The agent communicates with SpecterPanel via these encrypted endpoints. All payl
 
 ---
 
-## 💻 CROSS‑PLATFORM COMPATIBILITY
+## CROSS‑PLATFORM COMPATIBILITY
 
 | Platform | Status | Tested Versions | Requirements | Notes |
 |:---------|:------:|:----------------|:-------------|:------|
@@ -377,7 +377,7 @@ PhantomGate automatically detects the operating system and adjusts:
 
 ---
 
-## 🛡️ SAFE MODE
+## SAFE MODE
 
 For training and lab environments, PhantomGate includes a **Safe Mode** that simulates destructive actions without actual execution.
 
