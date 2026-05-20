@@ -21,6 +21,8 @@ from PhantomGate import main, targetData
 # Create an event to signal thread shutdown
 thread_stop_event = threading.Event()
 
+create_all_target_table = targetData(command="create_all_table")
+
 def run_main_with_stop():
     """Wrapper function to run main with stop event"""
     # Pass the stop event to main function if it accepts it

