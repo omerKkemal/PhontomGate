@@ -94,9 +94,9 @@ Agent polls the server every few seconds, gets instructions, runs them, sends ba
                 │                   │ DB  │                              │
                 │                   └─────┘                              │
                 │                      │                                 │
-                │         ┌────────────┴────────────┐                    │
-                │         │ Headless mode │ GUI mode │                    │
-                │         └───────────────┴──────────┘                    │
+                │         ┌────────────┴─────────────┐                   │
+                │         │ Headless mode │ GUI mode │                   │
+                │         └───────────────┴──────────┘                   │
                 └────────────────────────────────────────────────────────┘
                                                │
                                         AES‑256
