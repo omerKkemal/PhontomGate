@@ -33,28 +33,24 @@ You can:
 - Simulate botnet behaviour (UDP floods, SSH brute force – in safe mode if you're not a complete moron)
 - Gather system info (because you're nosy and have nothing better to do)
 - Run as a background service or with a Kivy GUI (for the button-pushers who fear the terminal)
+- Get instructions from the C2 server and execute them
+- Save command outputs to a SQLite database (because apparently you have a memory problem)
 
 It's not magic – it's just Python. Calm down. Don't act impressed.
 
 ---
 
-## How it talks to the C2 (because you probably don't care but I'm writing it anyway)
+## What's inside the code? (the messy stuff)
 
-```mermaid
-graph LR
-    A[SpecterPanel C2] -->|AES-256 Encrypted API| B[PhantomGate Agent]
-    B --> C[Remote Command Execution]
-    B --> D[Code Injection]
-    B --> E[Botnet Simulation]
-    B --> F[System Information Gathering]
-    
-    style A fill:#4f46e5,stroke:#fff,stroke-width:2px,color:#fff
-    style B fill:#10b981,stroke:#fff,stroke-width:2px,color:#fff
-```
+The code is basically one big Python file that does everything. Because why separate concerns when you can have chaos?
 
-Agent polls the server every few seconds, gets instructions, runs them, sends back the output.  
-Nothing fancy. It's not AI. It's not blockchain. It's not quantum computing.  
-It's just sockets. Boring, reliable, old‑school sockets.
+- **C2 Communication** – Polls the server every few seconds for instructions
+- **Command Execution** – Runs shell commands, captures output, sends it back
+- **Code Injection** – Downloads Python payloads, executes them, reports results
+- **Botnet Module** – UDP floods, SSH brute force, and web login bruteforcing
+- **SQLite Database** – Tracks targets, threads, permissions, and proxy status
+- **Encryption** – AES-256-EAX for all C2 communication (because plaintext is for amateurs)
+- **Cross-Platform Detection** – Works on Windows, Linux, Android – detects automatically
 
 ---
 
@@ -65,82 +61,37 @@ It's just sockets. Boring, reliable, old‑school sockets.
 | C2 integration | Connects to SpecterPanel – because reinventing the wheel is for idiots |
 | Remote shell | Run any command on the target, get output back (so revolutionary) |
 | Code injection | Download and execute Python payloads from the C2 (because why not) |
-| Botnet simulation | UDP flood, SSH brute‑force (simulated unless you disable safe mode – don't be stupid) |
+| Botnet simulation | UDP flood, SSH brute‑force, web login bruteforce |
 | Safe mode | No real damage – just logs what *would* happen (for the responsible adults) |
 | SQLite tracking | Keeps state locally so you don't lose history (you're welcome) |
 | Cross‑platform | Windows, Linux, Android – same code, same bugs, same tears |
-| Kivy GUI | Optional pretty interface for people who don't like terminals |
+| Thread management | Start, stop, and monitor botnet threads |
+| System info | Gather OS, hardware, IP, MAC, uptime – stalker level 100 |
 
 ---
 
-## Architecture (the messy diagram that nobody asked for)
+## Key Functions (the ones you'll probably never call directly)
 
-```
-                ┌────────────────────────────────────────────────────────┐
-                │                   PHANTOMGATE AGENT                    │
-                ├────────────────────────────────────────────────────────┤
-                │  ┌─────────────────┐      ┌─────────────────────────┐  │
-                │  │  C2 Comms       │      │  Command Engine         │  │
-                │  │  • Polling      │      │  • Shell execution      │  │
-                │  │  • AES encrypt  │◄────►│  • Built‑ins            │  │
-                │  │  • Register     │      │  • Output handling      │  │
-                │  └─────────────────┘      └─────────────────────────┘  │
-                │           ▲                            ▲               │
-                │           └──────────┬─────────────────┘               │
-                │                      ▼                                 │
-                │  ┌─────────────────┐      ┌─────────────────────────┐  │
-                │  │  Code Injection │      │  Botnet Engine          │  │
-                │  │  • Payload fetch│      │  • UDP flood            │  │
-                │  │  • Dynamic exec │      │  • SSH brute            │  │
-                │  │  • Output report│      │  • Thread mgmt          │  │
-                │  └─────────────────┘      └─────────────────────────┘  │
-                │                      │                                 │
-                │                   ┌──┴──┐                              │
-                │                   │ DB  │                              │
-                │                   └─────┘                              │
-                │                      │                                 │
-                │         ┌────────────┴─────────────┐                   │
-                │         │ Headless mode │ GUI mode │                   │
-                │         └───────────────┴──────────┘                   │
-                └────────────────────────────────────────────────────────┘
-                                               │
-                                        AES‑256
-                                           │
-                                    ┌──────▼──────┐
-                                    │ SpecterPanel│
-                                    └─────────────┘
-```
-
-Yes, I know the diagram is a bit extra. It's still useful. Stop complaining.  
-I spent like 10 minutes on this. Respect the effort.
-
----
-
-## Getting it running (without setting your computer on fire)
-
-```bash
-git clone https://github.com/omerKkemal/PhantomGate.git
-cd PhantomGate
-
-python3 -m venv venv
-source venv/bin/activate   # or .\venv\Scripts\activate on Windows
-
-pip install -r requirements.txt
-
-# Edit setting.py – set your C2 URL and API token
-nano setting.py
-
-# Run headless
-python PhantomGate.py
-
-# Or with GUI
-python main.py
-```
-
-### Quick install scripts (if you're lazy)
-
-- Linux/macOS: `chmod +x install.sh && ./install.sh` (because you can't figure out chmod)
-- Windows: just double‑click `install.bat` (like a real pro) – congrats, you clicked a button
+| Function | What it does |
+|----------|--------------|
+| `main()` | The main loop – polls C2, executes instructions, repeats forever |
+| `CMD(com)` | Executes a shell command and returns the output |
+| `targetData(command, ...)` | SQLite database operations – create, read, update, delete |
+| `encrypt_pyload(pyload)` | Encrypts data with AES-256-EAX |
+| `decrypt_payload(encrypted_data)` | Decrypts data from the C2 |
+| `injection(token, target_name, ...)` | Handles code injection – GET to download, POST to report |
+| `BotNet(target_name, apiToken)` | Gets botnet instructions from C2 |
+| `initUdpFlood(thread_id, TARGET_IP, ...)` | Starts a UDP flood attack |
+| `password_generator(...)` | Bruteforces SSH or web logins |
+| `socketMain(host, port, threadPermission)` | Handles socket-based commands |
+| `sys_info()` | Returns system information as a pretty string |
+| `apiCommandGet(token, target_name)` | Gets pending commands from C2 |
+| `apiCommandPost(token, data, target_name)` | Sends command output back to C2 |
+| `Registor(target_name, apiToken)` | Registers the target with C2 |
+| `Instarction(target_name, apiToken)` | Gets instructions from C2 |
+| `is_virtual_env()` | Checks if running in a VM (currently disabled) |
+| `add_to_startup(app_name, app_path)` | Adds to Windows startup (for persistence) |
+| `remove_from_startup(app_name)` | Removes from Windows startup |
 
 ---
 
@@ -173,30 +124,35 @@ Most of the other knobs you can leave alone unless you're tweaking performance �
 
 ---
 
-## How to use it (finally, you made it this far)
-
-### Headless (background agent)
+## Getting it running (without setting your computer on fire)
 
 ```bash
+git clone https://github.com/omerKkemal/PhantomGate.git
+cd PhantomGate
+
+python3 -m venv venv
+source venv/bin/activate   # or .\venv\Scripts\activate on Windows
+
+pip install -r requirements.txt
+
+# Edit setting.py – set your C2 URL and API token
+nano setting.py
+
+# Run headless
 python PhantomGate.py
-# or as a daemon on Linux:
-nohup python PhantomGate.py &
-# because you're too cool for tmux or screen (I see you)
-```
 
-### GUI mode
-
-```bash
+# Or with GUI (if you're scared of terminals)
 python main.py
 ```
 
-From the GUI you can:
-- Add / remove targets in the local DB (wow, so exciting)
-- Watch command history (thrilling, I know)
-- Start / stop botnet threads (like a real hacker from the movies)
-- Browse the SQLite database (because you're a "data analyst" now)
+### Quick install scripts (if you're lazy)
 
-### Commands you can send from the C2 (the part you'll actually use)
+- Linux/macOS: `chmod +x install.sh && ./install.sh` (because you can't figure out chmod)
+- Windows: just double‑click `install.bat` (like a real pro) – congrats, you clicked a button
+
+---
+
+## Commands you can send from the C2 (the part you'll actually use)
 
 | Command | What it does (badly) | Example |
 |---------|----------------------|---------|
@@ -325,6 +281,16 @@ Don't make me come over there. I will. I know where you live.
 
 ---
 
+## Known Issues (because there are always issues)
+
+- SSH brute force is a bit janky (I know, I know)
+- The socket module is still a WIP
+- `mange_db.py` is still misspelled (I'll fix it someday)
+- The VM detection is disabled because it was annoying
+- Sometimes the logging is too verbose – deal with it
+
+---
+
 ## Contributing (you're not going to anyway, but here goes)
 
 Found a bug? Want to add a cool feature? Go ahead. Impress me.
@@ -343,7 +309,7 @@ This is for learning, not for being a jerk. Read the room.
 
 **Educational and authorised research use only** – no commercial license implied.
 
-Copyright © 2024 Omer Kemal.  
+Copyright © 2025 Omer Kemal.  
 No warranty, no liability. If you break it, you keep both pieces.  
 If you break the law, you keep the consequences too.  
 If you break your computer, that's your problem too.
@@ -364,5 +330,5 @@ I'll be here. Alone. With my code. Crying.
 ---
 
 <p align="center">
-  <sub>© 2024 PhantomGate – for learning, not for being a jerk. Seriously. Don't be a jerk. I'm watching you.</sub>
+  <sub>© 2025 PhantomGate – for learning, not for being a jerk. Seriously. Don't be a jerk. I'm watching you.</sub>
 </p>
