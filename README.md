@@ -78,39 +78,40 @@ Boring, reliable, old‑school sockets that actually work.
 ## Architecture (the messy diagram nobody asked for)
 
 ```
-                ┌────────────────────────────────────────────────────────┐
-                │                   PHANTOMGATE AGENT                    │
-                ├────────────────────────────────────────────────────────┤
-                │  ┌─────────────────┐      ┌─────────────────────────┐  │
-                │  │  C2 Comms       │      │  Command Engine         │  │
-                │  │  • Polling      │      │  • Shell execution      │  │
-                │  │  • AES encrypt  │◄────►│  • Built‑ins            │  │
-                │  │  • Register     │      │  • Output handling      │  │
-                │  └─────────────────┘      └─────────────────────────┘  │
-                │           ▲                            ▲               │
-                │           └──────────┬─────────────────┘               │
-                │                      ▼                                 │
-                │  ┌─────────────────┐      ┌─────────────────────────┐  │
-                │  │  Code Injection │      │  Botnet Engine          │  │
-                │  │  • Payload fetch│      │  • UDP flood            │  │
-                │  │  • Dynamic exec │      │  • SSH brute            │  │
-                │  │  • Output report│      │  • Thread mgmt          │  │
-                │  └─────────────────┘      └─────────────────────────┘  │
-                │                      │                                 │
-                │                   ┌──┴──┐                              │
-                │                   │ DB  │                              │
-                │                   └─────┘                              │
-                │                      │                                 │
-                │         ┌────────────┴─────────────┐                   │
-                │         │ Headless mode │ GUI mode │                   │
-                │         └───────────────┴──────────┘                   │
-                └────────────────────────────────────────────────────────┘
-                                               │
-                                        AES‑256
-                                           │
-                                    ┌──────▼──────┐
-                                    │ SpecterPanel│
-                                    └─────────────┘
+                ┌────────────────────────────────────────────────────┐
+                │                   PHANTOMGATE AGENT                │
+                ├────────────────────────────────────────────────────┤
+                │  ┌─────────────────┐      ┌────────────────────┐   │
+                │  │  C2 Comms       │      │  Command Engine    │   │
+                │  │  • Polling      │      │  • Shell execution │   │
+                │  │  • AES encrypt  │◄────►│  • Built‑ins       │   │
+                │  │  • Register     │      │  • Output handling │   │
+                │  └─────────────────┘      └────────────────────┘   │
+                │           ▲                              ▲         │
+                │           └────────────┬─────────────────┘         │
+                │                        ▼                           │
+                │  ┌─────────────────┐      ┌─────────────────┐      │
+                │  │  Code Injection │      │  Botnet Engine  │      │
+                │  │  • Payload fetch│      │  • UDP flood    │      │
+                │  │  • Dynamic exec │      │  • SSH brute    │      │
+                │  │  • Output report│      │  • Thread mgmt  │      │
+                │  └─────────────────┘      └─────────────────┘      │
+                |           ▲                          ▲             │
+                │           └────────────┬─────────────┘             │
+                │                     ┌──┴──┐                        │
+                │                     │ DB  │                        │
+                │                     └─────┘                        │
+                │                        │                           │
+                │         ┌──────────────┴─────────────┐             │
+                │         │ Headless mode │ GUI mode   │             │
+                │         └───────────────┴────────────┘             │
+                └────────────────────────────────────────────────────┘
+                                         │
+                                      AES‑256
+                                         │
+                                  ┌──────▼──────┐
+                                  │ SpecterPanel│
+                                  └─────────────┘
 ```
 
 Yes, I know the diagram is a bit extra. It's still useful. Stop complaining.  
