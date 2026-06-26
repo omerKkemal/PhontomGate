@@ -87,8 +87,8 @@ Boring, reliable, old‑school sockets that actually work.
                 │  │  • AES encrypt  │◄────►│  • Built‑ins       │   │
                 │  │  • Register     │      │  • Output handling │   │
                 │  └─────────────────┘      └────────────────────┘   │
-                │           ▲                          ▲             │
-                │           └────────────┬─────────────┘             │
+                │           ▲                       ▲                │
+                │           └────────────┬──────────┘                │
                 │                        ▼                           │
                 │  ┌─────────────────┐      ┌─────────────────┐      │
                 │  │  Code Injection │      │  Botnet Engine  │      │
@@ -96,8 +96,8 @@ Boring, reliable, old‑school sockets that actually work.
                 │  │  • Dynamic exec │      │  • SSH brute    │      │
                 │  │  • Output report│      │  • Thread mgmt  │      │
                 │  └─────────────────┘      └─────────────────┘      │
-                |           ▲                          ▲             │
-                │           └────────────┬─────────────┘             │
+                |           ▲                        ▲               │
+                │           └────────────┬───────────┘               │
                 │                     ┌──┴──┐                        │
                 │                     │ DB  │                        │
                 │                     └─────┘                        │
