@@ -281,25 +281,12 @@ Use it in labs. Don't be a hero. Nobody likes a hero. Heroes go to jail.
 | Windows 10/11, Server | ✅ Full | cmd, PowerShell, registry persistence (the usual Windows nonsense) |
 | Linux (Ubuntu, Debian, CentOS) | ✅ Full | bash, crontab, daemon mode (so stealthy, much hacker) |
 | Android (Termux) | ✅ Full | Limited shell, but hey, it works – good enough for a phone |
+| **Flet GUI App** | ✅ Full | [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) – desktop + Android GUI |
 
 The agent auto‑detects the OS and adjusts accordingly.  
 Because even I don't want to maintain three separate codebases. I have a life. Sort of.
 
----
-
-## The Flet App (because some people hate terminals)
-
-Yes, there's a GUI version. Because apparently not everyone enjoys living in a terminal.
-
-**Check it out here:** [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
-
-The Flet app gives you:
-- A pretty interface for managing the agent (because buttons are fun)
-- Easy control without remembering commands (you're welcome)
-- Cross-platform desktop and Android support (because why not)
-- A way to pretend you're a real hacker with a GUI (no judgment)
-
-You can build it as a desktop app or package it for Android. Perfect for people who fear the terminal.
+**Want a GUI instead of the terminal?** Check out the [Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) – because buttons are nice.
 
 ---
 
