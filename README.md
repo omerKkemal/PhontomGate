@@ -22,6 +22,22 @@ Read it again if you need to. I'll be here. Judging you. Silently.
 
 ---
 
+## The Trojan Horse – PhontomGate GUI
+
+Yes, there's a GUI. Because apparently not everyone enjoys living in a terminal.  
+**Behold the pretty mask:** [PhontomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
+
+It's a Flet-based Trojan horse that gives you:
+- A pretty interface for controlling the phantom (because buttons are fun)
+- Cross-platform desktop and Android support (the nightmare must be portable)
+- A way to pretend you're a real hacker with a GUI (no judgment here)
+- The same C2 functionality, just with a friendly mask hiding the horror
+
+Build it as an APK, EXE, or web app – spread the infection.  
+*You didn't find it. It found you.*
+
+---
+
 ## So what does it do? (as if you couldn't guess)
 
 PhantomGate is the agent side of the SpecterPanel C2.  
@@ -37,22 +53,6 @@ You can:
 
 It's not magic – it's just Python with a lot of caffeine.  
 Calm down. Don't act impressed.
-
----
-
-## The Flet App (because some people hate terminals)
-
-Yes, there's a GUI version. Because apparently not everyone enjoys living in a terminal.
-
-**Check it out here:** [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
-
-The Flet app gives you:
-- A pretty interface for managing the agent (because buttons are fun)
-- Easy control without remembering commands (you're welcome)
-- Cross-platform desktop and Android support (because why not)
-- A way to pretend you're a real hacker with a GUI (no judgment)
-
-You can build it as a desktop app or package it for Android. Perfect for people who fear the terminal.
 
 ---
 
@@ -87,7 +87,7 @@ Boring, reliable, old‑school sockets that actually work.
 | Safe mode | No real damage – just logs what *would* happen (for grown-ups) |
 | SQLite tracking | Keeps state locally so you don't forget what you did (you're welcome) |
 | Cross‑platform | Windows, Linux, Android – same code, same bugs, same tears |
-| Flet GUI | Optional interface for people who fear the terminal |
+| Flet GUI | The Trojan horse – pretty interface for people who fear the terminal |
 
 ---
 
@@ -281,25 +281,25 @@ Use it in labs. Don't be a hero. Nobody likes a hero. Heroes go to jail.
 | Windows 10/11, Server | ✅ Full | cmd, PowerShell, registry persistence (the usual Windows nonsense) |
 | Linux (Ubuntu, Debian, CentOS) | ✅ Full | bash, crontab, daemon mode (so stealthy, much hacker) |
 | Android (Termux) | ✅ Full | Limited shell, but hey, it works – good enough for a phone |
-| **Flet GUI App** | ✅ Full | [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) – desktop + Android GUI |
+| **Flet GUI (Trojan Horse)** | ✅ Full | [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) – the pretty mask |
 
 The agent auto‑detects the OS and adjusts accordingly.  
 Because even I don't want to maintain three separate codebases. I have a life. Sort of.
 
-**Want a GUI instead of the terminal?** Check out the [Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) – because buttons are nice.
+**Want a GUI instead of the terminal?** Check out the [Trojan Horse](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) – because buttons are nice, and the phantom needs a pretty face.
 
 ---
 
-## The other half – SpecterPanel C2 (because this doesn't work alone)
+## The Dark Trio – complete ecosystem
 
-This agent is meant to work with **SpecterPanel**, the web‑based C2 server.
+| Project | Description | Link |
+|---------|-------------|------|
+| **SpecterPanel** | The C2 server – the master of puppets | [GitHub](https://github.com/omerKkemal/oh-tool-v2) |
+| **PhantomGate** | The agent – the phantom itself | [GitHub](https://github.com/omerKkemal/PhontomGate) |
+| **PhontomGate GUI** | The Trojan horse – the pretty mask | [GitHub](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) |
 
-- **SpecterPanel** repo: [https://github.com/omerKkemal/oh-tool-v2](https://github.com/omerKkemal/oh-tool-v2)
-- It gives you a dashboard, web terminal, code injection UI, and botnet manager.
-
-Together they make a decent C2 stack for red team practice.  
-Or for pretending you're a real hacker. Your call. I'm not judging.  
-Okay, maybe I'm judging a little.
+Together they form a complete C2 ecosystem.  
+Or a three-headed monster. Depends on your perspective.
 
 ---
 
@@ -364,7 +364,7 @@ If you break the law, you keep the consequences too.
 
 - C2 server: [SpecterPanel](https://github.com/omerKkemal/oh-tool-v2)
 - Agent: [PhantomGate](https://github.com/omerKkemal/PhontomGate)
-- Flet GUI: [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
+- Trojan Horse: [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
 
 Questions? Open an issue.  
 Rude comments? Go touch grass.  
@@ -373,5 +373,5 @@ Actually, just go outside. It's nice out there.
 ---
 
 <p align="center">
-  <sub>© 2025 PhantomGate – for learning, not for being a jerk. I'm watching you.</sub>
+  <sub>© 2025 PhantomGate – for learning, not for being a jerk. The phantom is watching you.</sub>
 </p>
