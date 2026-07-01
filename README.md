@@ -40,6 +40,22 @@ Calm down. Don't act impressed.
 
 ---
 
+## The Flet App (because some people hate terminals)
+
+Yes, there's a GUI version. Because apparently not everyone enjoys living in a terminal.
+
+**Check it out here:** [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
+
+The Flet app gives you:
+- A pretty interface for managing the agent (because buttons are fun)
+- Easy control without remembering commands (you're welcome)
+- Cross-platform desktop and Android support (because why not)
+- A way to pretend you're a real hacker with a GUI (no judgment)
+
+You can build it as a desktop app or package it for Android. Perfect for people who fear the terminal.
+
+---
+
 ## How it talks to the C2 (since you probably don't care)
 
 ```mermaid
@@ -71,7 +87,7 @@ Boring, reliable, old‑school sockets that actually work.
 | Safe mode | No real damage – just logs what *would* happen (for grown-ups) |
 | SQLite tracking | Keeps state locally so you don't forget what you did (you're welcome) |
 | Cross‑platform | Windows, Linux, Android – same code, same bugs, same tears |
-| Kivy GUI | Optional interface for people who fear the terminal |
+| Flet GUI | Optional interface for people who fear the terminal |
 
 ---
 
@@ -271,6 +287,22 @@ Because even I don't want to maintain three separate codebases. I have a life. S
 
 ---
 
+## The Flet App (because some people hate terminals)
+
+Yes, there's a GUI version. Because apparently not everyone enjoys living in a terminal.
+
+**Check it out here:** [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
+
+The Flet app gives you:
+- A pretty interface for managing the agent (because buttons are fun)
+- Easy control without remembering commands (you're welcome)
+- Cross-platform desktop and Android support (because why not)
+- A way to pretend you're a real hacker with a GUI (no judgment)
+
+You can build it as a desktop app or package it for Android. Perfect for people who fear the terminal.
+
+---
+
 ## The other half – SpecterPanel C2 (because this doesn't work alone)
 
 This agent is meant to work with **SpecterPanel**, the web‑based C2 server.
@@ -345,6 +377,7 @@ If you break the law, you keep the consequences too.
 
 - C2 server: [SpecterPanel](https://github.com/omerKkemal/oh-tool-v2)
 - Agent: [PhantomGate](https://github.com/omerKkemal/PhontomGate)
+- Flet GUI: [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
 
 Questions? Open an issue.  
 Rude comments? Go touch grass.  
