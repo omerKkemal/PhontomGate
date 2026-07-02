@@ -1,6 +1,6 @@
 # PhantomGate – because the world definitely needed another RAT
 
-![logo]()
+![logo](12.png)
 
 Oh look, another RAT. How original.  
 And yes, it can be used as a botnet client – because that's definitely what you're here for, right?  
