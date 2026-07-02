@@ -1,8 +1,6 @@
 # PhantomGate – because the world definitely needed another RAT
 
-<p align="center">
-  <img src="https://img.shields.io/badge/PHANTOMGATE-MULTI--PURPOSE%20RAT-10b981?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e" alt="PhantomGate">
-</p>
+![logo]()
 
 Oh look, another RAT. How original.  
 And yes, it can be used as a botnet client – because that's definitely what you're here for, right?  
