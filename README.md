@@ -2,37 +2,58 @@
 
 ![logo](12.jpg)
 
-Oh look, another RAT. How original.  
-And yes, it can be used as a botnet client – because that's definitely what you're here for, right?  
-Before you get any funny ideas (like actually using this on real people), read the warning.  
-I'll wait. Go ahead. I've got coffee.
+---
+
+## Behold. My Masterpiece.
+
+I spent countless sleepless nights crafting this beautiful disaster.  
+Blood, sweat, tears, and approximately 47 cups of coffee went into making this RAT.  
+You're welcome. Or I'm sorry. Honestly, I can't tell anymore.
 
 ---
 
-## ⚠️ Don't be an idiot (seriously, I mean it)
+## The Fine Print (Read It Or Don't, I'm Not Your Mom)
 
 This is for **educational use, authorised red teams, and your own lab only**.  
 If you run this on someone's machine without permission, that's illegal.  
-I'm not your lawyer, I'm not your alibi, and I'm definitely not bailing you out.
+I'm not your lawyer. I'm not your alibi. I'm not even sure I'm a real person at this point.
 
-You've been warned. Twice now. Three times if you count the title.  
-Read it again if you need to. I'll be here. Judging you. Silently.
+"I didn't know" won't work. You know. I know you know. Don't play dumb.
 
 ---
 
-## The Trojan Horse – PhontomGate GUI
+## The Trojan Horse – Behold Its Terrible Beauty
 
-Yes, there's a GUI. Because apparently not everyone enjoys living in a terminal.  
-**Behold the pretty mask:** [PhontomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
+Look upon my works, ye mighty, and despair.
 
-It's a Flet-based Trojan horse that gives you:
-- A pretty interface for controlling the phantom (because buttons are fun)
-- Cross-platform desktop and Android support (the nightmare must be portable)
-- A way to pretend you're a real hacker with a GUI (no judgment here)
-- The same C2 functionality, just with a friendly mask hiding the horror
+Yes. There's a GUI. Real hackers use terminals. But some people like buttons. And colors. So I gave them what they wanted. A beautiful, seductive, utterly terrifying interface.
 
-Build it as an APK, EXE, or web app – spread the infection.  
-*You didn't find it. It found you.*
+**Behold:** [PhontomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
+
+It looks so innocent. So helpful. So... corporate. Like something you'd install on your work computer to track expenses. The colors are calming. The layout is professional. It practically screams "legitimate business application."
+
+**That's the horror.**
+
+### The Beauty That Beckons:
+
+- **Elegance incarnate** – A work of art that happens to be a Trojan horse.
+- **Seductive simplicity** – Any fool can use it. That's the point. That's the trap.
+- **Cross-platform nightmare fuel** – Windows. Linux. Android. It follows everywhere.
+- **The perfect disguise** – It pretends to track expenses. It's tracking your everything.
+
+### The Horror That Lurks:
+
+- **It connects to a C2 server** – That button you clicked? It registered a target. That beautiful interface? It controls remote machines. Beautifully. Terrifyingly.
+- **It spreads like a plague** – Build it as APK, EXE, web app. Hand it to a friend. Watch it propagate. Like a flower that grows thorns. Like a smile that hides teeth.
+- **It pretends to be your friend** – It looks helpful. It looks innocent. You know. I know. We all know.
+- **That expense tracker?** – Yeah. That's tracking you. Every click. Every command. It's watching. It's waiting. And it's beautiful.
+
+**"What a lovely expense tracker!"** – You, 5 seconds before you realize it's tracking you.
+
+**The beauty makes you lower your guard. The horror makes you question everything.**
+
+*You didn't find it. It found you.*  
+*And it's absolutely stunning.*
 
 ---
 
@@ -42,19 +63,20 @@ PhantomGate is the agent side of the SpecterPanel C2.
 It runs on Windows, Linux, and even Android (Termux – because apparently phones need botnets too).  
 Everything is encrypted with AES‑256 because sending plaintext is for amateurs.
 
-You can:
-- Execute shell commands remotely (groundbreaking, I know)
-- Inject Python code on the fly (so hacker, very 1337)
-- Simulate botnet behaviour (UDP floods, SSH brute – in safe mode if you're not a moron)
-- Gather system info (because you're nosy)
-- Run as a background service or with a GUI (for the button-pushers)
+**What it does:**
 
-It's not magic – it's just Python with a lot of caffeine.  
+- **Remote Shell** – Execute commands on the target. Revolutionary, I know.
+- **Code Injection** – Download and run Python payloads from the C2.
+- **Botnet Simulation** – UDP floods, SSH brute-force – in safe mode, obviously.
+- **System Info** – Gather OS, hardware, IP (stalking 101).
+- **Cross-Platform** – Windows, Linux, Android – same code, same bugs, same tears.
+
+It's not magic – it's just Python with a lot of caffeine and questionable life choices.  
 Calm down. Don't act impressed.
 
 ---
 
-## How it talks to the C2 (since you probably don't care)
+## How It Talks To The C2 (since you probably don't care)
 
 ```mermaid
 graph LR
@@ -70,22 +92,20 @@ graph LR
 
 Agent polls the server every few seconds, gets instructions, runs them, sends back the output.  
 Nothing fancy. It's not AI. It's not blockchain. It's just sockets.  
-Boring, reliable, old‑school sockets that actually work.
+Boring, reliable, old‑school sockets that actually work. Unlike my sleep schedule.
 
 ---
 
-## Features (or "things it does when it's not crashing")
+## What's In This Beautiful Disaster
 
-| Module | What it actually does |
-|--------|----------------------|
-| C2 integration | Connects to SpecterPanel – because reinventing the wheel is for idiots |
-| Remote shell | Run any command on the target, get output back (so revolutionary) |
-| Code injection | Download and execute Python payloads from the C2 (because why not) |
-| Botnet simulation | UDP flood, SSH brute‑force – in safe mode, obviously |
-| Safe mode | No real damage – just logs what *would* happen (for grown-ups) |
-| SQLite tracking | Keeps state locally so you don't forget what you did (you're welcome) |
-| Cross‑platform | Windows, Linux, Android – same code, same bugs, same tears |
-| Flet GUI | The Trojan horse – pretty interface for people who fear the terminal |
+- **C2 Integration** – Connects to SpecterPanel – because reinventing the wheel is for idiots.
+- **Remote Shell** – Run any command on the target, get output back. Revolutionary.
+- **Code Injection** – Download and execute Python payloads from the C2.
+- **Botnet Simulation** – UDP flood, SSH brute-force – in safe mode, obviously.
+- **Safe Mode** – No real damage – just logs what *would* happen. For grown-ups.
+- **SQLite Tracking** – Keeps state locally so you don't forget what you did.
+- **Cross-Platform** – Windows, Linux, Android – same code, same bugs, same tears.
+- **Flet GUI** – The Trojan horse – pretty interface for people who fear the terminal.
 
 ---
 
@@ -133,7 +153,7 @@ I spent like 10 minutes on this. Respect the effort.
 
 ---
 
-## Getting it running (without setting your computer on fire)
+## Getting It Running (Without Breaking Things)
 
 ```bash
 git clone https://github.com/omerKkemal/PhantomGate.git
@@ -190,7 +210,7 @@ Most of the other knobs you can leave alone unless you're tweaking performance �
 
 ---
 
-## Commands you can send from the C2 (the fun part)
+## Commands You Can Send From The C2 (the fun part)
 
 | Command | What it does (badly) | Example |
 |---------|----------------------|---------|
@@ -204,7 +224,7 @@ Most of the other knobs you can leave alone unless you're tweaking performance �
 
 ---
 
-## API endpoints (for the nerds who actually read docs)
+## The API Endpoints (For The Nerds)
 
 The agent calls these on the SpecterPanel server. All traffic is encrypted with AES‑256‑EAX.  
 If you send plaintext, the server will ignore you. As it should. Security isn't optional.
@@ -233,7 +253,7 @@ Read it. Learn it. Love it. Or don't. I don't care.
 
 ---
 
-## Safe mode – for the responsible adults who don't want to go to jail
+## Safe Mode – For The Responsible Adults Who Don't Want To Go To Jail
 
 Enable safe mode, and the agent will log what it *would* do without actually doing it.  
 It's like a "dry run" for people who don't want to be featured on the evening news.
@@ -272,11 +292,11 @@ Use it in labs. Don't be a hero. Nobody likes a hero. Heroes go to jail.
 
 ---
 
-## Where does it run? (spoiler: almost everywhere)
+## Where Does It Run? (spoiler: almost everywhere)
 
 | Platform | Status | Notes |
 |----------|--------|-------|
-| Windows 10/11, Server | ✅ Full | cmd, PowerShell, registry persistence (the usual Windows nonsense) |
+| Windows 10/11, Server | ✅ Full | cmd, PowerShell, registry persistence (the usual nonsense) |
 | Linux (Ubuntu, Debian, CentOS) | ✅ Full | bash, crontab, daemon mode (so stealthy, much hacker) |
 | Android (Termux) | ✅ Full | Limited shell, but hey, it works – good enough for a phone |
 | **Flet GUI (Trojan Horse)** | ✅ Full | [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) – the pretty mask |
@@ -284,11 +304,9 @@ Use it in labs. Don't be a hero. Nobody likes a hero. Heroes go to jail.
 The agent auto‑detects the OS and adjusts accordingly.  
 Because even I don't want to maintain three separate codebases. I have a life. Sort of.
 
-**Want a GUI instead of the terminal?** Check out the [Trojan Horse](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) – because buttons are nice, and the phantom needs a pretty face.
-
 ---
 
-## The Dark Trio – complete ecosystem
+## The Dark Trio – Complete Ecosystem
 
 | Project | Description | Link |
 |---------|-------------|------|
@@ -301,7 +319,7 @@ Or a three-headed monster. Depends on your perspective.
 
 ---
 
-## Legal stuff (because lawyers exist)
+## Legal Stuff (because lawyers exist)
 
 You are allowed to use PhantomGate **only** for:
 
@@ -321,13 +339,14 @@ Don't make me come over there. I will. I know where you live.
 
 ---
 
-## Things I know are broken (I'm honest about it)
+## Things I Know Are Broken (I'm honest about it)
 
 - SSH brute force is a bit janky (I know, I'll get to it)
 - The socket module is still a WIP
 - `mange_db.py` is still misspelled (I'll fix it someday)
 - VM detection is disabled because it was annoying everyone
 - Sometimes the logs are too verbose – deal with it
+- My sleep schedule is also broken – but that's not your problem
 
 ---
 
@@ -345,31 +364,30 @@ This is for learning, not for being a jerk. Read the room.
 
 ---
 
-## License
+## Who Made This Beautiful Horror
 
-**Educational and authorised research use only** – no commercial license implied.
+**Omer Kemal** – Security Researcher, Developer, Caffeine Addict, Questionable Life Choices.
 
-Copyright © 2025 Omer Kemal.  
-No warranty. No liability. Use at your own risk.  
-If you break it, you keep both pieces.  
-If you break the law, you keep the consequences too.
+- [SpecterPanel](https://github.com/omerKkemal/oh-tool-v2)
+- [PhantomGate](https://github.com/omerKkemal/PhontomGate)
+- [PhontomGate GUI](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
 
 ---
 
-## Author
+## The Legal Bit
 
-**Omer Kemal** – security researcher who codes at 3am and regrets it at 9am.
-
-- C2 server: [SpecterPanel](https://github.com/omerKkemal/oh-tool-v2)
-- Agent: [PhantomGate](https://github.com/omerKkemal/PhontomGate)
-- Trojan Horse: [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
-
-Questions? Open an issue.  
-Rude comments? Go touch grass.  
-Actually, just go outside. It's nice out there.
+It's mine. Don't steal it. Don't misuse it. Be a decent human.
 
 ---
 
 <p align="center">
-  <sub>© 2025 PhantomGate – for learning, not for being a jerk. The phantom is watching you.</sub>
+  <sub>Behold. My masterpiece. Now go forth and cause beautiful chaos.</sub>
+  <br>
+  <sub>Built with coffee. Fueled by sarcasm. Supported by pure spite.</sub>
+  <br>
+  <sub>No warranty. No promises. No refunds. No regrets.</sub>
+  <br>
+  <sub>Go outside. Touch grass. Or don't. I'm not your mom.</sub>
+  <br>
+  <sub>Actually, maybe go outside. It's nice out there. I should probably take my own advice.</sub>
 </p>
