@@ -73,11 +73,13 @@ class Setting:
 
         # --- Database Configuration ---
         self.DB_NAME = "targetData.db"
+        self.DB_POEPLE = "people.db"
         self.DB_DIR = os.path.join(BASE_DIR, "db")
         os.makedirs(self.DB_DIR, exist_ok=True)
 
         # Always use absolute path for SQLite
         self.DB_URI = os.path.join(self.DB_DIR, self.DB_NAME)
+        self.DB_URI_PEOPLE = os.path.join(self.DB_DIR, self.DB_POEPLE)
 
         # --- C2 Server Link ---
         # test server link, change to your actual C2 server URL

@@ -16,6 +16,11 @@ from kivy.graphics import Color, RoundedRectangle
 from kivy.clock import Clock
 
 from PhantomGate import main, targetData
+from setting import Setting
+
+# intialize settings
+config = Setting()
+config.setting_var()
 
 # ===================== THREAD MANAGEMENT ======================
 # Create an event to signal thread shutdown
@@ -32,7 +37,7 @@ def run_main_with_stop():
 
 # ===================== DATABASE HANDLER ======================
 class MyDatabase:
-    def __init__(self, db_name='people.db'):
+    def __init__(self, db_name=config.DB_URI_PEOPLE):
         self.conn = sqlite3.connect(db_name, check_same_thread=False)
         self.lock = threading.Lock()
         self.create_table()
