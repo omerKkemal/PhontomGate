@@ -1539,4 +1539,5 @@ if __name__ == '__main__':
     #     sys.exit(0)
     # else:
     print("Running in a VM or isolated environment. Continuing execution.")
+    targetData(command="create_all_table")
     main()

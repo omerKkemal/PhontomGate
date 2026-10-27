@@ -83,9 +83,9 @@ class Setting:
 
         # --- C2 Server Link ---
         # test server link, change to your actual C2 server URL
-        # self.url = 'http://127.0.0.1:5000'
+        self.url = 'http://127.0.0.1:5000'
         # self.url = 'http://www.oh-tool-v2.onrender.com'
-        self.url = "https://omerk.pythonanywhere.com"
+        # self.url = "https://omerk.pythonanywhere.com"
 
         # --- Application Path ---
         # NOTE: This is Windows-specific and may not be valid on Linux
@@ -156,7 +156,7 @@ class Setting:
         self.BOT_CATEGORY = ['udp-flood','ssh','web-login']
 
         # API token
-        self.API_TOKEN = 'zRVqTf2kRYAWlyZhcPgrM9mWWue1DOjW2lPEVPb1n0y74B6pikeIS0M21iusVti2f2yyLyk9weu2Dgjpv0xy63mWpikYSMbAWm0gSL0TAXWsFIDeWVdVrOtdiLp4icOrJjFZjy5NnxUKeGcX1yQimQBg4L3CkK38hU5ZPbI2lcB8PI3ZbPaB6RPJZyE3ki4PAHPWYZKq'
+        self.API_TOKEN = 'NSdAciB4oa5Kr6EtnnkvdIKdEyRN7ad67VMMdiNvfd1dVDh0yTOUCzSabFCuhVsuj02fOyb1XXAWoIKymFDKjT5cVbMUbvg8uIDIQJ81H8CRGBwHmSr3SJzr1StSjrbYi7SsNxHm9y8buTJ5UdP6t1ARvyBvE0CCvwDaS1uYHHQX8L9lI67kLxxsrJE07c9Fv5eBYAB4'
 
         self.MAIN_LOOP_DELAY = 15
 
